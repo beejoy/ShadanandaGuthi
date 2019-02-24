@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace ShadanandaGuthi
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void ToolStripMenuItemQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            // TODO - Close the hidden Login Form also
+
         }
     }
 }
