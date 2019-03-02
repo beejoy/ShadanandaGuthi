@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadanandaGuthi", "ShadanandaGuthi\ShadanandaGuthi.csproj", "{78BD8F6B-6A74-42A3-A2F4-954A4E098D5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadanandaGuthiLibrary", "ShadanandaGuthiLibrary\ShadanandaGuthiLibrary.csproj", "{BC627C38-15EA-4C5D-B1DB-63B9B4356558}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{78BD8F6B-6A74-42A3-A2F4-954A4E098D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78BD8F6B-6A74-42A3-A2F4-954A4E098D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78BD8F6B-6A74-42A3-A2F4-954A4E098D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC627C38-15EA-4C5D-B1DB-63B9B4356558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC627C38-15EA-4C5D-B1DB-63B9B4356558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC627C38-15EA-4C5D-B1DB-63B9B4356558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC627C38-15EA-4C5D-B1DB-63B9B4356558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
