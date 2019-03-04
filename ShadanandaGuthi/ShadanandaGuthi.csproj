@@ -134,5 +134,8 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_messagebox_info_1804.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shadananda-guru-705x965px.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

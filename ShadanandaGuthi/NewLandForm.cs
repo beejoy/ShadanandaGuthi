@@ -16,8 +16,6 @@ namespace ShadanandaGuthi
 {
     public partial class NewLandForm : Form
     {
-        Location location = new Location();
-
         public NewLandForm()
         {
             InitializeComponent();
@@ -33,13 +31,10 @@ namespace ShadanandaGuthi
             try
             {
                 LocationDA locDA = new LocationDA();
-                //DataTable locationsDT = locDA.GetAllLocations();
-
-                //ComboBoxLocation.DataSource = locationsDT;
-                //ComboBoxLocation.DisplayMember = "location";
-                //ComboBoxLocation.ValueMember = "location_id";
 
                 ComboBoxLocation.DataSource = locDA.GetLocations();
+                ComboBoxLocation.DisplayMember = "LocationPreviousVDC";
+                ComboBoxLocation.ValueMember = "LocationID";
             }
             catch (Exception ex)
             {
@@ -50,10 +45,46 @@ namespace ShadanandaGuthi
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            // TODO - Implement code for saving new Land.
+            // Check if the land is duplicate
+            LandDA landDA = new LandDA();
+            MessageForm messageForm;
 
-            // Clear fields for new entry
-            ClearFields();
+            Land newLand = new Land();
+            newLand.LandLocation = (Location)ComboBoxLocation.SelectedItem;
+            newLand.PlotNumber = TextBoxPlotNumber.Text;
+            newLand.LandArea = TextBoxLandArea.Text;
+
+            bool result = false;
+
+            if (!landDA.IsDuplicateLand(newLand))
+            {
+                try
+                {
+                    result = landDA.SaveLand(newLand);
+                }
+                catch (Exception)
+                {
+                    messageForm = new MessageForm();
+                    messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण नयाँ जग्गाको विवरण सुरक्षित गर्न सकिएन।";
+                    messageForm.ShowDialog();
+                }
+
+                if (result)
+                {
+                    messageForm = new MessageForm();
+                    messageForm.MessageText = "नयाँ जग्गाको विवरण सफलतापूर्वक सुरक्षित गरियो।";
+                    messageForm.ShowDialog();
+                }
+
+                // Clear fields for new entry
+                ClearFields();
+            }
+            else
+            {
+                messageForm = new MessageForm();
+                messageForm.MessageText = "उक्त जग्गाको विवरण पहिले नै सुरक्षित गरिसकेको छ।";
+                messageForm.ShowDialog();
+            }
         }
 
         #region Private Helper Methods
@@ -70,8 +101,9 @@ namespace ShadanandaGuthi
 
         private void ComboBoxLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            location = (Location)ComboBoxLocation.Items[ComboBoxLocation.SelectedIndex];
-            //MessageBox.Show($"{location.LocationPreviousVDC} - {location.LocationNewLevel}", "SelectedIndexChanged");
+            // TODO - Remove or comment these line in relase build.
+            Location loc = (Location)ComboBoxLocation.SelectedItem;
+            this.Text=$"{loc.LocationID} - {loc.LocationPreviousVDC}";
         }
 
         private void TextBoxPlotNumber_TextChanged(object sender, EventArgs e)

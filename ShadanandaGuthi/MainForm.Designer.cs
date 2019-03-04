@@ -44,17 +44,27 @@
             this.ToolStripMenuItemRentDue = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemRentDueByTenant = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemRentDueByAllTenants = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageLand = new System.Windows.Forms.TabPage();
+            this.SplitContainerVertical = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPageTenant = new System.Windows.Forms.TabPage();
-            this.tabPageLease = new System.Windows.Forms.TabPage();
-            this.tabPageMiscellaneous = new System.Windows.Forms.TabPage();
+            this.ListBoxLocations = new System.Windows.Forms.ListBox();
+            this.SplitContainerHorizontal = new System.Windows.Forms.SplitContainer();
+            this.DataGridViewLands = new System.Windows.Forms.DataGridView();
+            this.DataGridViewTenants = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainMenuStrip.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPageLand.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).BeginInit();
+            this.SplitContainerVertical.Panel1.SuspendLayout();
+            this.SplitContainerVertical.Panel2.SuspendLayout();
+            this.SplitContainerVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitContainerHorizontal)).BeginInit();
+            this.SplitContainerHorizontal.Panel1.SuspendLayout();
+            this.SplitContainerHorizontal.Panel2.SuspendLayout();
+            this.SplitContainerHorizontal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -85,32 +95,32 @@
             // ToolStripMenuItemNewLocation
             // 
             this.ToolStripMenuItemNewLocation.Name = "ToolStripMenuItemNewLocation";
-            this.ToolStripMenuItemNewLocation.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemNewLocation.Size = new System.Drawing.Size(170, 24);
             this.ToolStripMenuItemNewLocation.Text = "नयाँ स्थान विवरण";
             this.ToolStripMenuItemNewLocation.Click += new System.EventHandler(this.ToolStripMenuItemNewLocation_Click);
             // 
             // ToolStripMenuItemNewLand
             // 
             this.ToolStripMenuItemNewLand.Name = "ToolStripMenuItemNewLand";
-            this.ToolStripMenuItemNewLand.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemNewLand.Size = new System.Drawing.Size(170, 24);
             this.ToolStripMenuItemNewLand.Text = "नयाँ जग्गा विवरण";
             this.ToolStripMenuItemNewLand.Click += new System.EventHandler(this.ToolStripMenuItemNewLand_Click);
             // 
             // ToolStripMenuItemLandList
             // 
             this.ToolStripMenuItemLandList.Name = "ToolStripMenuItemLandList";
-            this.ToolStripMenuItemLandList.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemLandList.Size = new System.Drawing.Size(170, 24);
             this.ToolStripMenuItemLandList.Text = "सम्पूर्ण जग्गाको सूची";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 6);
             // 
             // ToolStripMenuItemQuit
             // 
             this.ToolStripMenuItemQuit.Name = "ToolStripMenuItemQuit";
-            this.ToolStripMenuItemQuit.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemQuit.Size = new System.Drawing.Size(170, 24);
             this.ToolStripMenuItemQuit.Text = "बन्द गर्नुहोस्";
             this.ToolStripMenuItemQuit.Click += new System.EventHandler(this.ToolStripMenuItemQuit_Click);
             // 
@@ -179,86 +189,123 @@
             this.ToolStripMenuItemRentDueByAllTenants.Size = new System.Drawing.Size(165, 24);
             this.ToolStripMenuItemRentDueByAllTenants.Text = "सबैको एकमुष्ट सूची";
             // 
-            // tabControl1
+            // SplitContainerVertical
             // 
-            this.tabControl1.Controls.Add(this.tabPageLand);
-            this.tabControl1.Controls.Add(this.tabPageTenant);
-            this.tabControl1.Controls.Add(this.tabPageLease);
-            this.tabControl1.Controls.Add(this.tabPageMiscellaneous);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 28);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1370, 685);
-            this.tabControl1.TabIndex = 2;
+            this.SplitContainerVertical.BackColor = System.Drawing.SystemColors.Window;
+            this.SplitContainerVertical.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SplitContainerVertical.Location = new System.Drawing.Point(0, 28);
+            this.SplitContainerVertical.Name = "SplitContainerVertical";
             // 
-            // tabPageLand
+            // SplitContainerVertical.Panel1
             // 
-            this.tabPageLand.Controls.Add(this.label1);
-            this.tabPageLand.Controls.Add(this.dataGridView1);
-            this.tabPageLand.Location = new System.Drawing.Point(4, 29);
-            this.tabPageLand.Name = "tabPageLand";
-            this.tabPageLand.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLand.Size = new System.Drawing.Size(1362, 652);
-            this.tabPageLand.TabIndex = 0;
-            this.tabPageLand.Text = "जग्गा विवरण";
-            this.tabPageLand.UseVisualStyleBackColor = true;
+            this.SplitContainerVertical.Panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.SplitContainerVertical.Panel1.Controls.Add(this.pictureBox1);
+            this.SplitContainerVertical.Panel1.Controls.Add(this.label1);
+            this.SplitContainerVertical.Panel1.Controls.Add(this.ListBoxLocations);
+            this.SplitContainerVertical.Panel1.Padding = new System.Windows.Forms.Padding(10);
+            // 
+            // SplitContainerVertical.Panel2
+            // 
+            this.SplitContainerVertical.Panel2.Controls.Add(this.SplitContainerHorizontal);
+            this.SplitContainerVertical.Size = new System.Drawing.Size(1370, 681);
+            this.SplitContainerVertical.SplitterDistance = 427;
+            this.SplitContainerVertical.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 20);
+            this.label1.Location = new System.Drawing.Point(13, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 20);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "गुठीको नाममा रहेका जग्गाहरु";
+            this.label1.Text = "जग्गा भएको स्थान";
             // 
-            // dataGridView1
+            // ListBoxLocations
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 311);
-            this.dataGridView1.TabIndex = 0;
+            this.ListBoxLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListBoxLocations.FormattingEnabled = true;
+            this.ListBoxLocations.ItemHeight = 20;
+            this.ListBoxLocations.Location = new System.Drawing.Point(12, 33);
+            this.ListBoxLocations.Name = "ListBoxLocations";
+            this.ListBoxLocations.Size = new System.Drawing.Size(402, 244);
+            this.ListBoxLocations.TabIndex = 0;
             // 
-            // tabPageTenant
+            // SplitContainerHorizontal
             // 
-            this.tabPageTenant.Location = new System.Drawing.Point(4, 29);
-            this.tabPageTenant.Name = "tabPageTenant";
-            this.tabPageTenant.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTenant.Size = new System.Drawing.Size(1362, 652);
-            this.tabPageTenant.TabIndex = 1;
-            this.tabPageTenant.Text = "मोही विवरण";
-            this.tabPageTenant.UseVisualStyleBackColor = true;
+            this.SplitContainerHorizontal.BackColor = System.Drawing.SystemColors.Window;
+            this.SplitContainerHorizontal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SplitContainerHorizontal.Location = new System.Drawing.Point(0, 0);
+            this.SplitContainerHorizontal.Name = "SplitContainerHorizontal";
+            this.SplitContainerHorizontal.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // tabPageLease
+            // SplitContainerHorizontal.Panel1
             // 
-            this.tabPageLease.Location = new System.Drawing.Point(4, 29);
-            this.tabPageLease.Name = "tabPageLease";
-            this.tabPageLease.Size = new System.Drawing.Size(1362, 652);
-            this.tabPageLease.TabIndex = 2;
-            this.tabPageLease.Text = "ठेक्का";
-            this.tabPageLease.UseVisualStyleBackColor = true;
+            this.SplitContainerHorizontal.Panel1.Controls.Add(this.label2);
+            this.SplitContainerHorizontal.Panel1.Controls.Add(this.DataGridViewLands);
+            this.SplitContainerHorizontal.Panel1.Padding = new System.Windows.Forms.Padding(0, 10, 10, 5);
             // 
-            // tabPageMiscellaneous
+            // SplitContainerHorizontal.Panel2
             // 
-            this.tabPageMiscellaneous.Location = new System.Drawing.Point(4, 29);
-            this.tabPageMiscellaneous.Name = "tabPageMiscellaneous";
-            this.tabPageMiscellaneous.Size = new System.Drawing.Size(1362, 652);
-            this.tabPageMiscellaneous.TabIndex = 3;
-            this.tabPageMiscellaneous.Text = "विविध";
-            this.tabPageMiscellaneous.UseVisualStyleBackColor = true;
+            this.SplitContainerHorizontal.Panel2.Controls.Add(this.label3);
+            this.SplitContainerHorizontal.Panel2.Controls.Add(this.DataGridViewTenants);
+            this.SplitContainerHorizontal.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 10, 10);
+            this.SplitContainerHorizontal.Size = new System.Drawing.Size(939, 681);
+            this.SplitContainerHorizontal.SplitterDistance = 426;
+            this.SplitContainerHorizontal.TabIndex = 0;
+            // 
+            // DataGridViewLands
+            // 
+            this.DataGridViewLands.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewLands.Location = new System.Drawing.Point(7, 33);
+            this.DataGridViewLands.Name = "DataGridViewLands";
+            this.DataGridViewLands.Size = new System.Drawing.Size(919, 385);
+            this.DataGridViewLands.TabIndex = 0;
+            // 
+            // DataGridViewTenants
+            // 
+            this.DataGridViewTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewTenants.Location = new System.Drawing.Point(7, 28);
+            this.DataGridViewTenants.Name = "DataGridViewTenants";
+            this.DataGridViewTenants.Size = new System.Drawing.Size(919, 179);
+            this.DataGridViewTenants.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "जग्गाको सूची";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "मोहीको सूची";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 307);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(402, 354);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1370, 713);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1370, 709);
+            this.Controls.Add(this.SplitContainerVertical);
             this.Controls.Add(this.MainMenuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -270,10 +317,20 @@
             this.Enter += new System.EventHandler(this.MainForm_Enter);
             this.MainMenuStrip.ResumeLayout(false);
             this.MainMenuStrip.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPageLand.ResumeLayout(false);
-            this.tabPageLand.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.SplitContainerVertical.Panel1.ResumeLayout(false);
+            this.SplitContainerVertical.Panel1.PerformLayout();
+            this.SplitContainerVertical.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).EndInit();
+            this.SplitContainerVertical.ResumeLayout(false);
+            this.SplitContainerHorizontal.Panel1.ResumeLayout(false);
+            this.SplitContainerHorizontal.Panel1.PerformLayout();
+            this.SplitContainerHorizontal.Panel2.ResumeLayout(false);
+            this.SplitContainerHorizontal.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitContainerHorizontal)).EndInit();
+            this.SplitContainerHorizontal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,13 +353,15 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNewLocation;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentDueByTenant;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentDueByAllTenants;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageLand;
-        private System.Windows.Forms.TabPage tabPageTenant;
-        private System.Windows.Forms.TabPage tabPageLease;
-        private System.Windows.Forms.TabPage tabPageMiscellaneous;
+        private System.Windows.Forms.SplitContainer SplitContainerVertical;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListBox ListBoxLocations;
+        private System.Windows.Forms.SplitContainer SplitContainerHorizontal;
+        private System.Windows.Forms.DataGridView DataGridViewLands;
+        private System.Windows.Forms.DataGridView DataGridViewTenants;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

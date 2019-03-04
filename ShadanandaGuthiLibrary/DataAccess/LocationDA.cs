@@ -87,7 +87,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
                 if (dataReader.HasRows)
                     result = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Error: IsDuplicateLocation() method couldn't execute properly.");
             }
@@ -120,7 +120,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
                     result = true;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Error: SaveLocation() method couldn't execute properly.");
             }

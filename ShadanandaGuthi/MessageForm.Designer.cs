@@ -37,7 +37,7 @@
             // ButtonClose
             // 
             this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonClose.Location = new System.Drawing.Point(300, 93);
+            this.ButtonClose.Location = new System.Drawing.Point(302, 93);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(123, 41);
             this.ButtonClose.TabIndex = 8;
@@ -48,7 +48,7 @@
             // LabelMessage
             // 
             this.LabelMessage.AutoSize = true;
-            this.LabelMessage.Location = new System.Drawing.Point(75, 36);
+            this.LabelMessage.Location = new System.Drawing.Point(71, 36);
             this.LabelMessage.Name = "LabelMessage";
             this.LabelMessage.Size = new System.Drawing.Size(349, 20);
             this.LabelMessage.TabIndex = 9;
@@ -57,7 +57,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.iconfinder_messagebox_info_1804;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 162);
+            this.ClientSize = new System.Drawing.Size(451, 157);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LabelMessage);
             this.Controls.Add(this.ButtonClose);

@@ -17,6 +17,9 @@ namespace ShadanandaGuthi
         #region Control Event Handlers
         private void ButtonQuit_Click(object sender, EventArgs e)
         {
+            if (newLocation != null)
+                newLocation = null;
+
             this.Close();
         }
 
@@ -29,16 +32,17 @@ namespace ShadanandaGuthi
             newLocation.LocationNewLevel = TextBoxLocalLevel.Text;
             bool result = false;
 
-            if (!locationDA.IsDuplicateLocation(newLocation) && !String.IsNullOrEmpty(newLocation.LocationNewLevel))
+            if (!locationDA.IsDuplicateLocation(newLocation)) // && !String.IsNullOrEmpty(newLocation.LocationNewLevel))
             {
                 try
                 {
                     result = locationDA.SaveLocation(newLocation);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    // TODO - Handle exception
-                    MessageBox.Show("Exception in Save_Click.");
+                    messageForm = new MessageForm();
+                    messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण नयाँ स्थानको विवरण सुरक्षित गर्न सकिएन।";
+                    messageForm.ShowDialog();
                 }
 
                 if (result)

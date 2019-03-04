@@ -13,6 +13,8 @@ namespace ShadanandaGuthiLibrary.Model
         public string PlotNumber { get; set; }
         public string LandArea { get; set; }
 
+        public Land() {} 
+
         public Land(int landID, Location landLocation, string plotNumber, string landArea)
         {
             LandID = landID;
