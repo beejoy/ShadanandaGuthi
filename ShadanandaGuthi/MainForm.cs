@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShadanandaGuthiLibrary.DataAccess;
 using ShadanandaGuthiLibrary.Model;
 
 namespace ShadanandaGuthi
@@ -40,41 +41,99 @@ namespace ShadanandaGuthi
             newTenant.ShowDialog();
         }
 
-        private void PopulateLocationListBox()
-        {
-            List<Location> locations = new List<Location>()
-            //locations.Add(new Location(1, "केउरेनीपानी-२", "षडानन्द-६"));
-            //locations.Add(new Location(2, "केउरेनीपानी-3", "षडानन्द-६"));
-            //locations.Add(new Location(3, "कुदाककाउले-१", "षडानन्द-"));
-            //locations.Add(new Location(4, "कुदाककाउले-५", "षडानन्द-"));
-            //locations.Add(new Location(5, "तुङ्गेछा-५", "षडानन्द-"));
-            //locations.Add(new Location(6, "तुङ्गेछा-७", "षडानन्द-"));
-            //locations.Add(new Location(7, "मुलपानी-१", "षडानन्द-"));
-            //locations.Add(new Location(8, "मुलपानी-२", "षडानन्द-४"));
-
-            {
-                new Location() { LocationID=1, LocationPreviousVDC="केउरेनीपानी-२", LocationNewLevel="षडानन्द-६" },
-                new Location() { LocationID=2, LocationPreviousVDC="केउरेनीपानी-३", LocationNewLevel="षडानन्द-६" },
-                new Location() { LocationID=3, LocationPreviousVDC="मुलपानी-२", LocationNewLevel="षडानन्द-४" },
-                new Location() { LocationID=4, LocationPreviousVDC="मुलपानी-५", LocationNewLevel="षडानन्द-४" },
-                new Location() { LocationID=5, LocationPreviousVDC="मुलपानी-७", LocationNewLevel="षडानन्द-५" },
-                new Location() { LocationID=6, LocationPreviousVDC="तुङ्गेछा-४", LocationNewLevel="षडानन्द-८" },
-                new Location() { LocationID=7, LocationPreviousVDC="तुङ्गेछा-७", LocationNewLevel="षडानन्द-८" },
-                new Location() { LocationID=8, LocationPreviousVDC="नेपालेडाँडा-१", LocationNewLevel="षडानन्द-१" },
-                new Location() { LocationID=9, LocationPreviousVDC="खार्तम्छा-८", LocationNewLevel="षडानन्द-३" }
-            };
-            ListBoxLocations.DataSource = locations;
-        }
-
-        private void MainForm_Enter(object sender, EventArgs e)
-        {
-            //MessageBox.Show("MainForm_Activated", "MainForm");
-        }
-
         private void ToolStripMenuItemNewLocation_Click(object sender, EventArgs e)
         {
             NewLocationForm newLocation = new NewLocationForm();
             newLocation.ShowDialog();
+        }
+
+        private void PopulateLocationListBox()
+        {
+            List<Location> locations = new List<Location>();
+            LocationDA locDa = new LocationDA();
+
+            locations = locDa.GetLocations();
+            ListBoxLocations.DataSource = locations;
+            ListBoxLocations.DisplayMember = "LocationPreviousVDC";
+            ListBoxLocations.ValueMember = "LocationID";
+
+            // Need to call this to update label
+            //ListBoxLocations.SelectedIndex = 0;
+        }
+
+        private void ListBoxLocations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LandDA landDA = new LandDA();
+            Location location = (Location)ListBoxLocations.SelectedItem;
+            List<Land> lands = landDA.GetLandsByLocation(location);
+
+            DataGridViewLands.Rows.Clear();
+
+            int i = 0;
+            
+            while (i < lands.Count)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(DataGridViewLands);
+                row.Cells[0].Value = lands[i].LandLocation.LocationPreviousVDC;
+                row.Cells[1].Value = lands[i].PlotNumber;
+                row.Cells[2].Value = lands[i].LandArea;
+
+                // Store land_id as Tag
+                row.Tag = lands[i].LandID.ToString();
+
+                DataGridViewLands.Rows.Add(row);
+                i++;
+            }
+
+            // Update total number of lands in selected location (label text)
+            // TODO - Need to update this label at first run
+            LabelTotalLandsInSelectedLocation.Text = GetNepaliNumber(DataGridViewLands.Rows.GetRowCount(DataGridViewElementStates.Displayed));
+        }
+
+        private string GetNepaliNumber(int number)
+        {
+            List<string> nepaliNumbers = new List<string>() { "०", "१", "२", "३", "४", "५", "६", "७", "८", "९", "१०", "११", "१२", "१३", "१४", "१५", "१६", "१७", "१८", "१९", "२०" };
+
+            if (number >= 0 && number <= 20)
+                return nepaliNumbers[number];
+            else
+                return nepaliNumbers[0];
+        }
+
+        private void DataGridViewLands_SelectionChanged(object sender, EventArgs e)
+        {
+            TenantDA tenantDA = new TenantDA();
+
+            DataGridViewRow selectedRow = DataGridViewLands.CurrentRow;
+            List<Tenant> tenants = tenantDA.GetTenantsByLandID(int.Parse(selectedRow.Tag.ToString()));
+
+            DataGridViewTenants.Rows.Clear();
+
+            int i = 0;
+
+            while (i < tenants.Count)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(DataGridViewTenants);
+                row.Cells[0].Value = tenants[i].Fullname;
+                row.Cells[1].Value = tenants[i].Address;
+                row.Cells[2].Value = tenants[i].MobileNumber;
+                row.Cells[3].Value = tenants[i].Father;
+
+                // Store land_id as Tag
+                row.Tag = tenants[i].TenantID.ToString();
+
+                DataGridViewTenants.Rows.Add(row);
+                i++;
+            }
+        }
+
+        private void DataGridViewTenants_SelectionChanged(object sender, EventArgs e)
+        {
+            TenantDA tenantDA = new TenantDA();
+            int tenantID = int.Parse(DataGridViewTenants.CurrentRow.Tag.ToString());
+            MessageBox.Show($"Tenant's fullname = {tenantDA.GetTenantByID(tenantID).Fullname}");
         }
     }
 }

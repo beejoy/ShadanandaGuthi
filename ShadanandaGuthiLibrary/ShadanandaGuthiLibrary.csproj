@@ -46,8 +46,10 @@
     <Compile Include="DataAccess\GlobalConfig.cs" />
     <Compile Include="DataAccess\LocationDA.cs" />
     <Compile Include="DataAccess\LandDA.cs" />
+    <Compile Include="DataAccess\TenantDA.cs" />
     <Compile Include="Model\Land.cs" />
     <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

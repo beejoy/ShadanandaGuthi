@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ShadanandaGuthiLibrary.Model;
 
 namespace ShadanandaGuthiLibrary.DataAccess
@@ -13,23 +10,61 @@ namespace ShadanandaGuthiLibrary.DataAccess
     {
         public List<Land> GetLands()
         {
-            //List<Location> locations = new List<Location>();
-
-            //string sql = "SELECT location_id, location, local_level FROM Location ORDER BY location";
-            //SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
-            //sqlConn.Open();
-            //SqlDataReader dataReader = sqlCommand.ExecuteReader();
-
-            //while (dataReader.Read())
-            //{
-            //    locations.Add(new Location((int)dataReader[0], dataReader[1].ToString(), dataReader[2].ToString()));
-            //}
-            //sqlConn.Close();
-
-            //return locations;
             List<Land> lands = new List<Land>();
 
-            //string sql = "SELECT land_id, location_id, plot_no, land_area FROM Land";
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "GetAllLands";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlConn.Open();
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        lands.Add(new Land((int)dataReader[0], new Location((int)dataReader[1], dataReader[2].ToString(), dataReader[3].ToString()), dataReader[4].ToString(), dataReader[5].ToString()));
+                    }
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error : LandDA.GetLands() method.");
+                }
+            }
+
+            return lands;
+        }
+
+        public List<Land> GetLandsByLocation(Location location)
+        {
+            List<Land> lands = new List<Land>();
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "GetLandsByLocationID";
+                    sqlCommand.Parameters.AddWithValue("@LocationID", location.LocationID);
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlConn.Open();
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        lands.Add(new Land((int)dataReader[0], new Location((int)dataReader[1], dataReader[2].ToString(), dataReader[3].ToString()), dataReader[4].ToString(), dataReader[5].ToString()));
+                    }
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error : LandDA.GetLandsByLocation() method.");
+                }
+            }
 
             return lands;
         }

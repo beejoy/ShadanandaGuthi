@@ -21,11 +21,6 @@ namespace ShadanandaGuthi
             InitializeComponent();
         }
 
-        private void ButtonQuit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void NewLandForm_Load(object sender, EventArgs e)
         {
             try
@@ -36,10 +31,11 @@ namespace ShadanandaGuthi
                 ComboBoxLocation.DisplayMember = "LocationPreviousVDC";
                 ComboBoxLocation.ValueMember = "LocationID";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // TODO - Handle exception
-                MessageBox.Show(ex.Message);
+                MessageForm messageForm = new MessageForm();
+                messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण नयाँ जग्गाको विवरण सुरक्षित गर्न सकिएन।";
+                messageForm.ShowDialog();
             }
         }
 
@@ -85,6 +81,11 @@ namespace ShadanandaGuthi
                 messageForm.MessageText = "उक्त जग्गाको विवरण पहिले नै सुरक्षित गरिसकेको छ।";
                 messageForm.ShowDialog();
             }
+        }
+
+        private void ButtonQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         #region Private Helper Methods
