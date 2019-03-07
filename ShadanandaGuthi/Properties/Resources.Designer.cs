@@ -73,6 +73,36 @@ namespace ShadanandaGuthi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap land_and_tenant_ims {
+            get {
+                object obj = ResourceManager.GetObject("land-and-tenant-ims", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap land_and_tenant_ims_red {
+            get {
+                object obj = ResourceManager.GetObject("land-and-tenant-ims-red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap land_and_tenant_ims_red1 {
+            get {
+                object obj = ResourceManager.GetObject("land-and-tenant-ims-red1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shadananda_guru_705x965px {
             get {
                 object obj = ResourceManager.GetObject("shadananda-guru-705x965px", resourceCulture);

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShadanandaGuthiLibrary.DataAccess;
 using ShadanandaGuthiLibrary.Model;
@@ -47,18 +41,21 @@ namespace ShadanandaGuthi
             newLocation.ShowDialog();
         }
 
+        private void ToolStripMenuItemTenantRegisterAndTransfer_Click(object sender, EventArgs e)
+        {
+            TenantRegisterAndTransferForm newTenantRegister = new TenantRegisterAndTransferForm();
+            newTenantRegister.ShowDialog();
+        }
+
         private void PopulateLocationListBox()
         {
             List<Location> locations = new List<Location>();
             LocationDA locDa = new LocationDA();
 
-            locations = locDa.GetLocations();
+            locations = locDa.GetLocationsHavingLands();
             ListBoxLocations.DataSource = locations;
             ListBoxLocations.DisplayMember = "LocationPreviousVDC";
             ListBoxLocations.ValueMember = "LocationID";
-
-            // Need to call this to update label
-            //ListBoxLocations.SelectedIndex = 0;
         }
 
         private void ListBoxLocations_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,9 +72,10 @@ namespace ShadanandaGuthi
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(DataGridViewLands);
-                row.Cells[0].Value = lands[i].LandLocation.LocationPreviousVDC;
-                row.Cells[1].Value = lands[i].PlotNumber;
-                row.Cells[2].Value = lands[i].LandArea;
+                row.Cells[0].Value = GetNepaliNumber(i + 1);
+                row.Cells[1].Value = lands[i].LandLocation.LocationPreviousVDC;
+                row.Cells[2].Value = lands[i].PlotNumber;
+                row.Cells[3].Value = lands[i].LandArea;
 
                 // Store land_id as Tag
                 row.Tag = lands[i].LandID.ToString();
@@ -87,8 +85,36 @@ namespace ShadanandaGuthi
             }
 
             // Update total number of lands in selected location (label text)
-            // TODO - Need to update this label at first run
-            LabelTotalLandsInSelectedLocation.Text = GetNepaliNumber(DataGridViewLands.Rows.GetRowCount(DataGridViewElementStates.Displayed));
+            LabelTotalLandsInSelectedLocation.Text = GetNepaliNumber(lands.Count);
+        }
+
+        private void DataGridViewLands_SelectionChanged(object sender, EventArgs e)
+        {
+            LeaseDA leaseDA = new LeaseDA();
+
+            DataGridViewRow selectedRow = DataGridViewLands.CurrentRow;
+            List<Tenant> tenants = leaseDA.GetCurrentTenantsByLandID(int.Parse(selectedRow.Tag.ToString()));
+
+            DataGridViewTenants.Rows.Clear();
+
+            int i = 0;
+
+            while (i < tenants.Count)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(DataGridViewTenants);
+                row.Cells[0].Value = GetNepaliNumber(i + 1);
+                row.Cells[1].Value = tenants[i].Fullname;
+                row.Cells[2].Value = tenants[i].Address;
+                row.Cells[3].Value = tenants[i].MobileNumber;
+                row.Cells[4].Value = tenants[i].Father;
+
+                // Store land_id as Tag
+                row.Tag = tenants[i].TenantID.ToString();
+
+                DataGridViewTenants.Rows.Add(row);
+                i++;
+            }
         }
 
         private string GetNepaliNumber(int number)
@@ -99,41 +125,6 @@ namespace ShadanandaGuthi
                 return nepaliNumbers[number];
             else
                 return nepaliNumbers[0];
-        }
-
-        private void DataGridViewLands_SelectionChanged(object sender, EventArgs e)
-        {
-            TenantDA tenantDA = new TenantDA();
-
-            DataGridViewRow selectedRow = DataGridViewLands.CurrentRow;
-            List<Tenant> tenants = tenantDA.GetTenantsByLandID(int.Parse(selectedRow.Tag.ToString()));
-
-            DataGridViewTenants.Rows.Clear();
-
-            int i = 0;
-
-            while (i < tenants.Count)
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(DataGridViewTenants);
-                row.Cells[0].Value = tenants[i].Fullname;
-                row.Cells[1].Value = tenants[i].Address;
-                row.Cells[2].Value = tenants[i].MobileNumber;
-                row.Cells[3].Value = tenants[i].Father;
-
-                // Store land_id as Tag
-                row.Tag = tenants[i].TenantID.ToString();
-
-                DataGridViewTenants.Rows.Add(row);
-                i++;
-            }
-        }
-
-        private void DataGridViewTenants_SelectionChanged(object sender, EventArgs e)
-        {
-            TenantDA tenantDA = new TenantDA();
-            int tenantID = int.Parse(DataGridViewTenants.CurrentRow.Tag.ToString());
-            MessageBox.Show($"Tenant's fullname = {tenantDA.GetTenantByID(tenantID).Fullname}");
         }
     }
 }

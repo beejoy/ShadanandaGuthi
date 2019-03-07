@@ -84,6 +84,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TenantRegisterAndTransferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenantRegisterAndTransferForm.Designer.cs">
+      <DependentUpon>TenantRegisterAndTransferForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +118,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TenantRegisterAndTransferForm.resx">
+      <DependentUpon>TenantRegisterAndTransferForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shadananda-guru-705x965px.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\land-and-tenant-ims-red.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShadanandaGuthiLibrary.Model
+﻿namespace ShadanandaGuthiLibrary.Model
 {
     public class Land
     {
@@ -12,7 +6,7 @@ namespace ShadanandaGuthiLibrary.Model
         public Location LandLocation { get; set; }
         public string PlotNumber { get; set; }
         public string LandArea { get; set; }
-
+        public string LandInfo => $"{PlotNumber} ({LandArea})";
         public Land() {} 
 
         public Land(int landID, Location landLocation, string plotNumber, string landArea)

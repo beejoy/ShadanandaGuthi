@@ -34,7 +34,7 @@ namespace ShadanandaGuthi
             catch (Exception)
             {
                 MessageForm messageForm = new MessageForm();
-                messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण नयाँ जग्गाको विवरण सुरक्षित गर्न सकिएन।";
+                messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण जग्गा भएको स्थानको विवरण लोड गर्न सकिएन।";
                 messageForm.ShowDialog();
             }
         }

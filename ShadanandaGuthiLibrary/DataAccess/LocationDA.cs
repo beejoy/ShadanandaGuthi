@@ -70,6 +70,24 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return locations;
         }
 
+        public List<Location> GetLocationsHavingLands()
+        {
+            List<Location> locations = new List<Location>();
+
+            string sql = "SELECT DISTINCT Location.location_id, location, local_level FROM Location INNER JOIN Land ON Location.location_id = Land.location_id ORDER BY location";
+            SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
+            sqlConn.Open();
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                locations.Add(new Location((int)dataReader[0], dataReader[1].ToString(), dataReader[2].ToString()));
+            }
+            sqlConn.Close();
+
+            return locations;
+        }
+
         public bool IsDuplicateLocation (Location locationToCheck)
         {
             bool result = false;
