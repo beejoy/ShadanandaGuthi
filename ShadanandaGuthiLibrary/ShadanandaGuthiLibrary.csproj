@@ -48,6 +48,7 @@
     <Compile Include="DataAccess\LocationDA.cs" />
     <Compile Include="DataAccess\LandDA.cs" />
     <Compile Include="DataAccess\TenantDA.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Model\Land.cs" />
     <Compile Include="Model\Lease.cs" />
     <Compile Include="Model\Location.cs" />

@@ -141,6 +141,28 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return tenants;
         }
 
+        public bool DoesTenantHaveLease(int tenantID)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                string sql = "SELECT land_id FROM Lease WHERE tenant_id = @TenantID";
+                SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
+                sqlCommand.Parameters.AddWithValue("@TenantID", tenantID);
+
+                sqlConn.Open();
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
         public bool SaveTenant(Tenant newTenant)
         {
             bool result = false;
@@ -169,6 +191,32 @@ namespace ShadanandaGuthiLibrary.DataAccess
                 catch (Exception)
                 {
                     throw new Exception("Error: SaveLocation() method couldn't execute properly.");
+                }
+            }
+
+            return result;
+        }
+
+        public bool DeleteTenant(Tenant tenant)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = "DeleteTenant";
+                sqlCommand.Parameters.AddWithValue("@TenantID", tenant.TenantID);
+
+                sqlCommand.Connection = sqlConn;
+
+                sqlConn.Open();
+
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    result = true;
                 }
             }
 

@@ -100,13 +100,6 @@ namespace ShadanandaGuthi
         }
         #endregion
 
-        private void ComboBoxLocation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // TODO - Remove or comment these line in relase build.
-            Location loc = (Location)ComboBoxLocation.SelectedItem;
-            this.Text=$"{loc.LocationID} - {loc.LocationPreviousVDC}";
-        }
-
         private void TextBoxPlotNumber_TextChanged(object sender, EventArgs e)
         {
             if (TextBoxPlotNumber.TextLength > 0 && TextBoxLandArea.TextLength > 0)

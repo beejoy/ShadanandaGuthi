@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllLandsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllLandsForm.Designer.cs">
+      <DependentUpon>AllLandsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllTenantsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllTenantsForm.Designer.cs">
+      <DependentUpon>AllTenantsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmationForm.Designer.cs">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +108,15 @@
     <Compile Include="TenantRegisterAndTransferForm.Designer.cs">
       <DependentUpon>TenantRegisterAndTransferForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllLandsForm.resx">
+      <DependentUpon>AllLandsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllTenantsForm.resx">
+      <DependentUpon>AllTenantsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmationForm.resx">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

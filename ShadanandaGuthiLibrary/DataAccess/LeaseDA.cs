@@ -11,6 +11,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
 {
     public class LeaseDA
     {
+        // TODO - To be implemented GetCurrentTenantsByLandID
         public List<Tenant> GetCurrentTenantsByLandID(int landID)
         {
             List<Tenant> tenants = new List<Tenant>();
@@ -43,6 +44,65 @@ namespace ShadanandaGuthiLibrary.DataAccess
             }
 
             return tenants;
+        }
+
+        public DataTable GetLeaseByLandID(int landID, bool activeLeaseOnly = false)
+        {
+            DataTable leasesDT = new DataTable();
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "GetLeaseByLandID";
+                    sqlCommand.Parameters.AddWithValue("@LandID", landID);
+                    sqlCommand.Parameters.AddWithValue("@IsCurrent", activeLeaseOnly ? 1 : 0);
+                    sqlCommand.Connection = sqlConn;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+
+                    sqlConn.Open();
+                    adapter.Fill(leasesDT);
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error : LeaseDA.GetLeaseByLandID() method.");
+                }
+            }
+
+            return leasesDT;
+        }
+
+        public DataTable GetLeaseByTenantID(int tenantID)
+        {
+            DataTable leasesDT = new DataTable();
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "GetLeaseByTenantID";
+                    sqlCommand.Parameters.AddWithValue("@TenantID", tenantID);
+                    sqlCommand.Connection = sqlConn;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+
+                    sqlConn.Open();
+                    adapter.Fill(leasesDT);
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error : LeaseDA.GetLeaseByTenantID() method.");
+                }
+            }
+
+            return leasesDT;
         }
 
         public bool IsDuplicateLease(Lease leaseToCheck)

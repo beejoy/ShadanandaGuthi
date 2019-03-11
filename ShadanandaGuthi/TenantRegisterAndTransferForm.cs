@@ -26,7 +26,7 @@ namespace ShadanandaGuthi
             {
                 LocationDA locDA = new LocationDA();
 
-                ComboBoxLocation.DataSource = locDA.GetLocations();
+                ComboBoxLocation.DataSource = locDA.GetLocationsHavingLands();
                 ComboBoxLocation.DisplayMember = "LocationPreviousVDC";
                 ComboBoxLocation.ValueMember = "LocationID";
             }

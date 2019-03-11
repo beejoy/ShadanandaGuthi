@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace ShadanandaGuthiLibrary.DataAccess
 {
-    static class GlobalConfig
+    public static class GlobalConfig
     {
         public static string ConnString()
         {

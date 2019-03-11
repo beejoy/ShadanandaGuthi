@@ -49,7 +49,6 @@
             this.ComboBoxLocation.Name = "ComboBoxLocation";
             this.ComboBoxLocation.Size = new System.Drawing.Size(252, 28);
             this.ComboBoxLocation.TabIndex = 1;
-            this.ComboBoxLocation.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLocation_SelectedIndexChanged);
             // 
             // TextBoxPlotNumber
             // 

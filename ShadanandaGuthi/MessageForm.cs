@@ -19,6 +19,11 @@ namespace ShadanandaGuthi
             InitializeComponent();
         }
 
+        public MessageForm(string messageText)
+        {
+            MessageText = messageText;
+        }
+
         private void MessageForm_Load(object sender, EventArgs e)
         {
             LabelMessage.Text = MessageText;
