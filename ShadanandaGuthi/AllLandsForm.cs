@@ -46,26 +46,16 @@ namespace ShadanandaGuthi
             }
         }
 
-        private void AllLandsForm_Activated(object sender, EventArgs e)
-        {
-            PopulateDGVLands();
-        }
-
-        private void DataGridViewLands_SelectionChanged(object sender, EventArgs e)
+        private void PopulateDGVTenants(int landID)
         {
             LeaseDA leaseDA = new LeaseDA();
-
-            DataGridViewRow selectedRow = DataGridViewLands.CurrentRow;
-            DataTable leasesDT = leaseDA.GetLeaseByLandID(int.Parse(selectedRow.Tag.ToString()), true);
+            DataTable leasesDT = leaseDA.GetLeaseByLandID(landID);
 
             DataGridViewTenants.Rows.Clear();
 
-            //int i = 0;
-
-            for ( int i =0; i <= leasesDT.Rows.Count-1; i++)
+            for (int i = 0; i <= leasesDT.Rows.Count - 1; i++)
             {
                 DataGridViewRow row = new DataGridViewRow();
-                //DataRow dataRow = leasesDT.Rows[i];
 
                 row.CreateCells(DataGridViewTenants);
                 row.Cells[0].Value = Helper.GetNepaliNumber(i + 1);
@@ -76,12 +66,36 @@ namespace ShadanandaGuthi
                 row.Cells[5].Value = leasesDT.Rows[i][6];
                 row.Cells[6].Value = leasesDT.Rows[i][7];
                 row.Cells[7].Value = leasesDT.Rows[i][8];
+                row.Cells[8].Value = leasesDT.Rows[i][9];
 
                 // Store land_id as Tag
                 row.Tag = leasesDT.Rows[i][1];
 
                 DataGridViewTenants.Rows.Add(row);
-                //i++;
+            }
+        }
+
+        private void AllLandsForm_Activated(object sender, EventArgs e)
+        {
+            PopulateDGVLands();
+        }
+
+        private void DataGridViewLands_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = DataGridViewLands.CurrentRow;
+            PopulateDGVTenants(int.Parse(selectedRow.Tag.ToString()));
+
+            // If DataGridViewTenants has no rows, we can assume 
+            // the selected land has no tenant. So we can
+            // safely delete this land; so enable the Delete button
+
+            if (DataGridViewTenants.Rows.Count > 0)
+            {
+                ButtonDeleteLand.Enabled = false;
+            }
+            else
+            {
+                ButtonDeleteLand.Enabled = true;
             }
         }
 
@@ -89,6 +103,52 @@ namespace ShadanandaGuthi
         {
             NewLandForm newLand = new NewLandForm();
             newLand.ShowDialog();
+        }
+
+        private void ButtonDeleteLand_Click(object sender, EventArgs e)
+        {
+            LandDA landDA = new LandDA();
+            
+            DataGridViewRow selectedRow = DataGridViewLands.CurrentRow;
+            int landID = int.Parse(selectedRow.Tag.ToString());
+
+            // Proceed only if the land has no lease
+            if (!landDA.DoesLandHaveLease(landID))
+            {
+                DialogResult dlgResult;
+                ConfirmationForm confirmForm = new ConfirmationForm();
+                confirmForm.ConfirmationText = "के तपाई जग्गाको विवरण मेटाउन चाहनु हुन्छ ?";
+                dlgResult = confirmForm.ShowDialog();
+                if (dlgResult == DialogResult.OK)
+                {
+                    MessageForm messageForm;
+                    bool result = false;
+
+                    Land landToDelete = new Land();
+                    landToDelete.LandID = landID;
+
+                    try
+                    {
+                        result = landDA.DeleteLand(landToDelete);
+                    }
+                    catch (Exception)
+                    {
+                        messageForm = new MessageForm();
+                        messageForm.MessageText = "आन्तरिक त्रुटीको कारण कार्य सम्पन्न गर्न सकिएन।";
+                        messageForm.ShowDialog();
+                    }
+
+                    if (result)
+                    {
+                        messageForm = new MessageForm();
+                        messageForm.MessageText = "छनौट गरिएको जग्गाको विवरण सफलतापूर्वक मेटाइयो।";
+                        messageForm.ShowDialog();
+
+                        // Refresh the datagridview
+                        PopulateDGVLands();
+                    }
+                }
+            }
         }
     }
 }

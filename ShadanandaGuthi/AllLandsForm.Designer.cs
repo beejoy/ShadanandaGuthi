@@ -46,6 +46,10 @@
             this.ColumnLandArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridViewTenants = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ButtonDeleteLand = new System.Windows.Forms.Button();
+            this.ButtonAddNewLand = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTenant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +57,8 @@
             this.ColumnFather = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLeaseFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAnnualRent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIsCurrent = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColumnRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ButtonDeleteLand = new System.Windows.Forms.Button();
-            this.ButtonAddNewLand = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             this.ButtonClose.Location = new System.Drawing.Point(734, 239);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(159, 41);
-            this.ButtonClose.TabIndex = 10;
+            this.ButtonClose.TabIndex = 6;
             this.ButtonClose.Text = "बन्द गर्नुहोस्";
             this.ButtonClose.UseVisualStyleBackColor = true;
             this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
@@ -76,7 +77,8 @@
             // 
             this.DataGridViewLands.AllowUserToAddRows = false;
             this.DataGridViewLands.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DataGridViewLands.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
             this.DataGridViewLands.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewLands.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
@@ -100,7 +102,7 @@
             this.DataGridViewLands.Name = "DataGridViewLands";
             this.DataGridViewLands.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewLands.Size = new System.Drawing.Size(675, 235);
-            this.DataGridViewLands.TabIndex = 11;
+            this.DataGridViewLands.TabIndex = 1;
             this.DataGridViewLands.SelectionChanged += new System.EventHandler(this.DataGridViewLands_SelectionChanged);
             // 
             // ColumnSNo
@@ -141,7 +143,8 @@
             // 
             this.DataGridViewTenants.AllowUserToAddRows = false;
             this.DataGridViewTenants.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DataGridViewTenants.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
             this.DataGridViewTenants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridViewTenants.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -164,12 +167,53 @@
             this.ColumnFather,
             this.ColumnLeaseFrom,
             this.ColumnAnnualRent,
+            this.ColumnIsCurrent,
             this.ColumnRemarks});
             this.DataGridViewTenants.Location = new System.Drawing.Point(26, 324);
             this.DataGridViewTenants.Name = "DataGridViewTenants";
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewTenants.Size = new System.Drawing.Size(867, 186);
-            this.DataGridViewTenants.TabIndex = 12;
+            this.DataGridViewTenants.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "जग्गा (कित्ता)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 301);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "मोहीको विवरण";
+            // 
+            // ButtonDeleteLand
+            // 
+            this.ButtonDeleteLand.Location = new System.Drawing.Point(734, 92);
+            this.ButtonDeleteLand.Name = "ButtonDeleteLand";
+            this.ButtonDeleteLand.Size = new System.Drawing.Size(159, 41);
+            this.ButtonDeleteLand.TabIndex = 5;
+            this.ButtonDeleteLand.Text = "जग्गा मेटाउनुहोस्";
+            this.ButtonDeleteLand.UseVisualStyleBackColor = true;
+            this.ButtonDeleteLand.Click += new System.EventHandler(this.ButtonDeleteLand_Click);
+            // 
+            // ButtonAddNewLand
+            // 
+            this.ButtonAddNewLand.Location = new System.Drawing.Point(734, 45);
+            this.ButtonAddNewLand.Name = "ButtonAddNewLand";
+            this.ButtonAddNewLand.Size = new System.Drawing.Size(159, 41);
+            this.ButtonAddNewLand.TabIndex = 4;
+            this.ButtonAddNewLand.Text = "नयाँ जग्गा विविरण थप्‍नुहोस्";
+            this.ButtonAddNewLand.UseVisualStyleBackColor = true;
+            this.ButtonAddNewLand.Click += new System.EventHandler(this.ButtonAddNewLand_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -222,50 +266,18 @@
             this.ColumnAnnualRent.MinimumWidth = 100;
             this.ColumnAnnualRent.Name = "ColumnAnnualRent";
             // 
+            // ColumnIsCurrent
+            // 
+            this.ColumnIsCurrent.HeaderText = "हाल भोग गरिरहेको हो?";
+            this.ColumnIsCurrent.Name = "ColumnIsCurrent";
+            this.ColumnIsCurrent.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnIsCurrent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // ColumnRemarks
             // 
             this.ColumnRemarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnRemarks.HeaderText = "कैफियत";
             this.ColumnRemarks.Name = "ColumnRemarks";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "जग्गा (कित्ता)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 301);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "मोहीको विवरण";
-            // 
-            // ButtonDeleteLand
-            // 
-            this.ButtonDeleteLand.Location = new System.Drawing.Point(734, 92);
-            this.ButtonDeleteLand.Name = "ButtonDeleteLand";
-            this.ButtonDeleteLand.Size = new System.Drawing.Size(159, 41);
-            this.ButtonDeleteLand.TabIndex = 15;
-            this.ButtonDeleteLand.Text = "जग्गा मेटाउनुहोस्";
-            this.ButtonDeleteLand.UseVisualStyleBackColor = true;
-            // 
-            // ButtonAddNewLand
-            // 
-            this.ButtonAddNewLand.Location = new System.Drawing.Point(734, 45);
-            this.ButtonAddNewLand.Name = "ButtonAddNewLand";
-            this.ButtonAddNewLand.Size = new System.Drawing.Size(159, 41);
-            this.ButtonAddNewLand.TabIndex = 16;
-            this.ButtonAddNewLand.Text = "नयाँ जग्गा विविरण थप्‍नुहोस्";
-            this.ButtonAddNewLand.UseVisualStyleBackColor = true;
-            this.ButtonAddNewLand.Click += new System.EventHandler(this.ButtonAddNewLand_Click);
             // 
             // AllLandsForm
             // 
@@ -317,6 +329,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFather;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLeaseFrom;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAnnualRent;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnIsCurrent;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRemarks;
     }
 }

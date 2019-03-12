@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ButtonAddNewTenant = new System.Windows.Forms.Button();
             this.ButtonDeleteTenant = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.ButtonAddNewTenant.Location = new System.Drawing.Point(730, 46);
             this.ButtonAddNewTenant.Name = "ButtonAddNewTenant";
             this.ButtonAddNewTenant.Size = new System.Drawing.Size(176, 41);
-            this.ButtonAddNewTenant.TabIndex = 23;
+            this.ButtonAddNewTenant.TabIndex = 4;
             this.ButtonAddNewTenant.Text = "नयाँ मोही विवरण थप्‍नुहोस्";
             this.ButtonAddNewTenant.UseVisualStyleBackColor = true;
             this.ButtonAddNewTenant.Click += new System.EventHandler(this.ButtonAddNewTenant_Click);
@@ -80,7 +80,7 @@
             this.ButtonDeleteTenant.Location = new System.Drawing.Point(730, 93);
             this.ButtonDeleteTenant.Name = "ButtonDeleteTenant";
             this.ButtonDeleteTenant.Size = new System.Drawing.Size(176, 41);
-            this.ButtonDeleteTenant.TabIndex = 22;
+            this.ButtonDeleteTenant.TabIndex = 5;
             this.ButtonDeleteTenant.Text = "मोही विवरण मेटाउनुहोस्";
             this.ButtonDeleteTenant.UseVisualStyleBackColor = true;
             this.ButtonDeleteTenant.Click += new System.EventHandler(this.ButtonDeleteTenant_Click);
@@ -92,7 +92,7 @@
             this.label2.Location = new System.Drawing.Point(24, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 20);
-            this.label2.TabIndex = 21;
+            this.label2.TabIndex = 2;
             this.label2.Text = "भोग चलन गरेको जग्गाको विवरण";
             // 
             // label1
@@ -102,24 +102,24 @@
             this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 0;
             this.label1.Text = "मोहीको सूची";
             // 
             // DataGridViewLeases
             // 
             this.DataGridViewLeases.AllowUserToAddRows = false;
             this.DataGridViewLeases.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DataGridViewLeases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.DataGridViewLeases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewLeases.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewLeases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewLeases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridViewLeases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewLeases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -134,13 +134,13 @@
             this.DataGridViewLeases.Name = "DataGridViewLeases";
             this.DataGridViewLeases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewLeases.Size = new System.Drawing.Size(878, 191);
-            this.DataGridViewLeases.TabIndex = 19;
+            this.DataGridViewLeases.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn2.HeaderText = "क्र.सं.";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 59;
@@ -154,32 +154,32 @@
             // 
             // ColumnPlotNumber
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnPlotNumber.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnPlotNumber.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnPlotNumber.FillWeight = 80F;
             this.ColumnPlotNumber.HeaderText = "कित्ता नं.";
             this.ColumnPlotNumber.Name = "ColumnPlotNumber";
             // 
             // ColumnLandArea
             // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnLandArea.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnLandArea.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnLandArea.FillWeight = 80F;
             this.ColumnLandArea.HeaderText = "क्षेत्रफल";
             this.ColumnLandArea.Name = "ColumnLandArea";
             // 
             // ColumnLeaseFrom
             // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnLeaseFrom.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnLeaseFrom.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnLeaseFrom.HeaderText = "भोग चलन मिति";
             this.ColumnLeaseFrom.Name = "ColumnLeaseFrom";
             // 
             // ColumnAnnualRent
             // 
             this.ColumnAnnualRent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnAnnualRent.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnAnnualRent.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnAnnualRent.HeaderText = "वार्षिक ठेक्का";
             this.ColumnAnnualRent.MinimumWidth = 100;
             this.ColumnAnnualRent.Name = "ColumnAnnualRent";
@@ -201,17 +201,17 @@
             // 
             this.DataGridViewTenants.AllowUserToAddRows = false;
             this.DataGridViewTenants.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DataGridViewTenants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            this.DataGridViewTenants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DataGridViewTenants.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewTenants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewTenants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DataGridViewTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewTenants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnSNo,
@@ -224,14 +224,14 @@
             this.DataGridViewTenants.Name = "DataGridViewTenants";
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewTenants.Size = new System.Drawing.Size(675, 254);
-            this.DataGridViewTenants.TabIndex = 18;
+            this.DataGridViewTenants.TabIndex = 1;
             this.DataGridViewTenants.SelectionChanged += new System.EventHandler(this.DataGridViewTenants_SelectionChanged);
             // 
             // ColumnSNo
             // 
             this.ColumnSNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnSNo.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnSNo.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnSNo.HeaderText = "क्र.सं.";
             this.ColumnSNo.Name = "ColumnSNo";
             this.ColumnSNo.Width = 59;
@@ -246,16 +246,16 @@
             // ColumnTenantAddress
             // 
             this.ColumnTenantAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnTenantAddress.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnTenantAddress.DefaultCellStyle = dataGridViewCellStyle11;
             this.ColumnTenantAddress.HeaderText = "ठेगाना";
             this.ColumnTenantAddress.MinimumWidth = 100;
             this.ColumnTenantAddress.Name = "ColumnTenantAddress";
             // 
             // ColumnTenantMobileNumber
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnTenantMobileNumber.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnTenantMobileNumber.DefaultCellStyle = dataGridViewCellStyle12;
             this.ColumnTenantMobileNumber.HeaderText = "मोबाइल नं.";
             this.ColumnTenantMobileNumber.Name = "ColumnTenantMobileNumber";
             // 
@@ -277,7 +277,7 @@
             this.ButtonClose.Location = new System.Drawing.Point(730, 259);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(176, 41);
-            this.ButtonClose.TabIndex = 17;
+            this.ButtonClose.TabIndex = 6;
             this.ButtonClose.Text = "बन्द गर्नुहोस्";
             this.ButtonClose.UseVisualStyleBackColor = true;
             this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);

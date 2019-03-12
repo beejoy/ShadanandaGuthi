@@ -46,7 +46,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return tenants;
         }
 
-        public DataTable GetLeaseByLandID(int landID, bool activeLeaseOnly = false)
+        public DataTable GetLeaseByLandID(int landID)
         {
             DataTable leasesDT = new DataTable();
 
@@ -58,7 +58,6 @@ namespace ShadanandaGuthiLibrary.DataAccess
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.CommandText = "GetLeaseByLandID";
                     sqlCommand.Parameters.AddWithValue("@LandID", landID);
-                    sqlCommand.Parameters.AddWithValue("@IsCurrent", activeLeaseOnly ? 1 : 0);
                     sqlCommand.Connection = sqlConn;
 
                     SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);

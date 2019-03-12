@@ -107,6 +107,54 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return result;
         }
 
+        public bool DeleteLand(Land land)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = "DeleteLand";
+                sqlCommand.Parameters.AddWithValue("@LandID", land.LandID);
+
+                sqlCommand.Connection = sqlConn;
+
+                sqlConn.Open();
+
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
+        public bool DoesLandHaveLease(int landID)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                string sql = "SELECT lease_id FROM Lease WHERE land_id = @landID";
+                SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
+                sqlCommand.Parameters.AddWithValue("@landID", landID);
+
+                sqlConn.Open();
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Checks in the database if there is any matching record for the land object passed as the parameter.
         /// </summary>

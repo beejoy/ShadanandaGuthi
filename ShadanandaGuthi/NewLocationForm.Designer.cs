@@ -53,7 +53,7 @@
             this.label2.Location = new System.Drawing.Point(24, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 3;
             this.label2.Text = "नयाँ स्थानीय तह :";
             // 
             // TextBoxLocation
@@ -61,7 +61,7 @@
             this.TextBoxLocation.Location = new System.Drawing.Point(129, 25);
             this.TextBoxLocation.Name = "TextBoxLocation";
             this.TextBoxLocation.Size = new System.Drawing.Size(240, 26);
-            this.TextBoxLocation.TabIndex = 2;
+            this.TextBoxLocation.TabIndex = 1;
             this.TextBoxLocation.TextChanged += new System.EventHandler(this.TextBoxLocation_TextChanged);
             // 
             // label3
@@ -70,7 +70,7 @@
             this.label3.Location = new System.Drawing.Point(375, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 2;
             this.label3.Text = "(जस्तै : तुङ्गेछा-३)";
             // 
             // TextBoxLocalLevel
@@ -78,7 +78,7 @@
             this.TextBoxLocalLevel.Location = new System.Drawing.Point(129, 64);
             this.TextBoxLocalLevel.Name = "TextBoxLocalLevel";
             this.TextBoxLocalLevel.Size = new System.Drawing.Size(240, 26);
-            this.TextBoxLocalLevel.TabIndex = 5;
+            this.TextBoxLocalLevel.TabIndex = 4;
             this.TextBoxLocalLevel.TextChanged += new System.EventHandler(this.TextBoxLocalLevel_TextChanged);
             // 
             // label4
@@ -87,7 +87,7 @@
             this.label4.Location = new System.Drawing.Point(375, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 5;
             this.label4.Text = "(जस्तै : षडानन्द-८)";
             // 
             // ButtonSave
@@ -96,7 +96,7 @@
             this.ButtonSave.Location = new System.Drawing.Point(129, 120);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(116, 41);
-            this.ButtonSave.TabIndex = 8;
+            this.ButtonSave.TabIndex = 6;
             this.ButtonSave.Text = "सुरक्षित गर्नुहोस्";
             this.ButtonSave.UseVisualStyleBackColor = true;
             this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
@@ -106,7 +106,7 @@
             this.ButtonQuit.Location = new System.Drawing.Point(253, 120);
             this.ButtonQuit.Name = "ButtonQuit";
             this.ButtonQuit.Size = new System.Drawing.Size(116, 41);
-            this.ButtonQuit.TabIndex = 9;
+            this.ButtonQuit.TabIndex = 7;
             this.ButtonQuit.Text = "रद्द गर्नुहोस्";
             this.ButtonQuit.UseVisualStyleBackColor = true;
             this.ButtonQuit.Click += new System.EventHandler(this.ButtonQuit_Click);
