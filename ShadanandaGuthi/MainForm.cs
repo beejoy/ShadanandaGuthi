@@ -137,5 +137,17 @@ namespace ShadanandaGuthi
         {
             PopulateLocationListBox();
         }
+
+        private void ToolStripMenuItemCurrentYear_Click(object sender, EventArgs e)
+        {
+            CurrentYearForm currentYearForm = new CurrentYearForm();
+            currentYearForm.ShowDialog();
+        }
+
+        private void ToolStripMenuItemLeaseRentPayment_Click(object sender, EventArgs e)
+        {
+            LeasePaymentForm leasePaymentForm = new LeasePaymentForm();
+            leasePaymentForm.ShowDialog();
+        }
     }
 }

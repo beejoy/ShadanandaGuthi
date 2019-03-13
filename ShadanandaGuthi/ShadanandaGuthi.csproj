@@ -64,6 +64,18 @@
     <Compile Include="ConfirmationForm.Designer.cs">
       <DependentUpon>ConfirmationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentYearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentYearForm.Designer.cs">
+      <DependentUpon>CurrentYearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeasePaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeasePaymentForm.Designer.cs">
+      <DependentUpon>LeasePaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmationForm.resx">
       <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentYearForm.resx">
+      <DependentUpon>CurrentYearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeasePaymentForm.resx">
+      <DependentUpon>LeasePaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

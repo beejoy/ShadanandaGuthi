@@ -57,10 +57,9 @@
             this.ToolStripMenuItemRentDue = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemRentDueByTenant = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemRentDueByAllTenants = new System.Windows.Forms.ToolStripMenuItem();
-            this.ववधToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.चलवरषसटगरनहसToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemMisc = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemCurrentYear = new System.Windows.Forms.ToolStripMenuItem();
             this.SplitContainerVertical = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SplitContainerHorizontal = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.LabelTotalLandsInSelectedLocation = new System.Windows.Forms.Label();
@@ -81,19 +80,20 @@
             this.ColumnPlotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLandArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).BeginInit();
             this.SplitContainerVertical.Panel1.SuspendLayout();
             this.SplitContainerVertical.Panel2.SuspendLayout();
             this.SplitContainerVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerHorizontal)).BeginInit();
             this.SplitContainerHorizontal.Panel1.SuspendLayout();
             this.SplitContainerHorizontal.Panel2.SuspendLayout();
             this.SplitContainerHorizontal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +105,7 @@
             this.ToolStripMenuItemLand,
             this.ToolStripMenuItemTenant,
             this.ToolStripMenuItemLease,
-            this.ववधToolStripMenuItem});
+            this.ToolStripMenuItemMisc});
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Size = new System.Drawing.Size(1370, 28);
@@ -236,8 +236,9 @@
             // ToolStripMenuItemLeaseRentPayment
             // 
             this.ToolStripMenuItemLeaseRentPayment.Name = "ToolStripMenuItemLeaseRentPayment";
-            this.ToolStripMenuItemLeaseRentPayment.Size = new System.Drawing.Size(144, 24);
+            this.ToolStripMenuItemLeaseRentPayment.Size = new System.Drawing.Size(180, 24);
             this.ToolStripMenuItemLeaseRentPayment.Text = "ठेक्का संकलन";
+            this.ToolStripMenuItemLeaseRentPayment.Click += new System.EventHandler(this.ToolStripMenuItemLeaseRentPayment_Click);
             // 
             // ToolStripMenuItemRentDue
             // 
@@ -260,19 +261,20 @@
             this.ToolStripMenuItemRentDueByAllTenants.Size = new System.Drawing.Size(165, 24);
             this.ToolStripMenuItemRentDueByAllTenants.Text = "सबैको एकमुष्ट सूची";
             // 
-            // ववधToolStripMenuItem
+            // ToolStripMenuItemMisc
             // 
-            this.ववधToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.चलवरषसटगरनहसToolStripMenuItem});
-            this.ववधToolStripMenuItem.Name = "ववधToolStripMenuItem";
-            this.ववधToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.ववधToolStripMenuItem.Text = "विविध";
+            this.ToolStripMenuItemMisc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemCurrentYear});
+            this.ToolStripMenuItemMisc.Name = "ToolStripMenuItemMisc";
+            this.ToolStripMenuItemMisc.Size = new System.Drawing.Size(49, 24);
+            this.ToolStripMenuItemMisc.Text = "विविध";
             // 
-            // चलवरषसटगरनहसToolStripMenuItem
+            // ToolStripMenuItemCurrentYear
             // 
-            this.चलवरषसटगरनहसToolStripMenuItem.Name = "चलवरषसटगरनहसToolStripMenuItem";
-            this.चलवरषसटगरनहसToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.चलवरषसटगरनहसToolStripMenuItem.Text = "चालु वर्ष";
+            this.ToolStripMenuItemCurrentYear.Name = "ToolStripMenuItemCurrentYear";
+            this.ToolStripMenuItemCurrentYear.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemCurrentYear.Text = "चालु वर्ष सेटिङ्ग";
+            this.ToolStripMenuItemCurrentYear.Click += new System.EventHandler(this.ToolStripMenuItemCurrentYear_Click);
             // 
             // SplitContainerVertical
             // 
@@ -295,17 +297,6 @@
             this.SplitContainerVertical.SplitterDistance = 427;
             this.SplitContainerVertical.TabIndex = 2;
             this.SplitContainerVertical.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(402, 648);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // SplitContainerHorizontal
             // 
@@ -549,6 +540,17 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(402, 648);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -584,7 +586,6 @@
             this.SplitContainerVertical.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).EndInit();
             this.SplitContainerVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SplitContainerHorizontal.Panel1.ResumeLayout(false);
             this.SplitContainerHorizontal.Panel1.PerformLayout();
             this.SplitContainerHorizontal.Panel2.ResumeLayout(false);
@@ -592,6 +593,7 @@
             this.SplitContainerHorizontal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -631,8 +633,8 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemLoginLogout;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemChangePassword;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemExit;
-        private System.Windows.Forms.ToolStripMenuItem ववधToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem चलवरषसटगरनहसToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemMisc;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCurrentYear;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenant;

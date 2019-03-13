@@ -109,6 +109,37 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return tenants;
         }
 
+        public List<Tenant> GetActiveTenants()
+        {
+            List<Tenant> tenants = new List<Tenant>();
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.CommandText = "SELECT tenant_id, fullname, address, mobile_no, father FROM ActiveTenantsView ORDER BY fullname, address";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlConn.Open();
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        tenants.Add(new Tenant((int)dataReader[0], dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString()));
+                    }
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error: GetActiveTenants() method couldn't execute properly.");
+                }
+            }
+
+            return tenants;
+        }
+
         public List<Tenant> GetAllTenantsExcept(int tenantID)
         {
             List<Tenant> tenants = new List<Tenant>();
@@ -190,7 +221,42 @@ namespace ShadanandaGuthiLibrary.DataAccess
                 }
                 catch (Exception)
                 {
-                    throw new Exception("Error: SaveLocation() method couldn't execute properly.");
+                    throw new Exception("Error: SaveTenant() method couldn't execute properly.");
+                }
+            }
+
+            return result;
+        }
+
+        public bool UpdateTenant(Tenant tenant)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "UpdateTenant";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlCommand.Parameters.AddWithValue("@TenantID", tenant.TenantID);
+                    sqlCommand.Parameters.AddWithValue("@Fullname", tenant.Fullname);
+                    sqlCommand.Parameters.AddWithValue("@Address", tenant.Address);
+                    sqlCommand.Parameters.AddWithValue("@MobileNumber", tenant.MobileNumber);
+                    sqlCommand.Parameters.AddWithValue("@Father", tenant.Father);
+
+                    sqlConn.Open();
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        result = true;
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error: UpdateTenant() method couldn't execute properly.");
                 }
             }
 

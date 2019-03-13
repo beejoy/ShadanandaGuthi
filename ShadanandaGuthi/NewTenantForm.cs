@@ -7,9 +7,17 @@ namespace ShadanandaGuthi
 {
     public partial class NewTenantForm : Form
     {
+        Tenant tenant = new Tenant();
+
         public NewTenantForm()
         {
             InitializeComponent();
+        }
+
+        public NewTenantForm(Tenant existingTenant)
+        {
+            InitializeComponent();
+            tenant = existingTenant;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
@@ -21,44 +29,69 @@ namespace ShadanandaGuthi
         {
             // Check if the land is duplicate
             TenantDA tenantDA = new TenantDA();
-            MessageForm messageForm;
+            MessageForm messageForm = new MessageForm();
 
-            Tenant newTenant = new Tenant();
-            newTenant.Fullname = TextBoxFullname.Text;
-            newTenant.Address = TextBoxAddress.Text;
-            newTenant.MobileNumber = TextBoxMobileNumber.Text;
-            newTenant.Father = TextBoxFather.Text;
-
+            // If tenant.TenantID is null, it is new tenant. So proceed with Save.
+            // Otherwise, proceed with updating tenant.
             bool result = false;
 
-            if (!tenantDA.IsDuplicateTenant(newTenant))
+            tenant.Fullname = TextBoxFullname.Text;
+            tenant.Address = TextBoxAddress.Text;
+            tenant.MobileNumber = TextBoxMobileNumber.Text;
+            tenant.Father = TextBoxFather.Text;
+
+            if (tenant.TenantID < 1)
+            {
+                if (!tenantDA.IsDuplicateTenant(tenant))
+                {
+                    try
+                    {
+                        result = tenantDA.SaveTenant(tenant);
+                    }
+                    catch (Exception)
+                    {
+                        messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण नयाँ मोहीको विवरण सुरक्षित गर्न सकिएन।";
+                        messageForm.ShowDialog();
+                    }
+
+                    if (result)
+                    {
+                        messageForm.MessageText = "नयाँ मोहीको विवरण सफलतापूर्वक सुरक्षित गरियो।";
+                        messageForm.ShowDialog();
+                    }
+
+                    // Clear fields for new entry
+                    ClearFields();
+                }
+                else
+                {
+                    messageForm.MessageText = "उक्त मोहीको विवरण पहिले नै सुरक्षित गरिसकेको छ।";
+                    messageForm.ShowDialog();
+                }
+            }
+            else
             {
                 try
                 {
-                    result = tenantDA.SaveTenant(newTenant);
+                    result = tenantDA.UpdateTenant(tenant);
                 }
                 catch (Exception)
                 {
-                    messageForm = new MessageForm();
-                    messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण नयाँ मोहीको विवरण सुरक्षित गर्न सकिएन।";
+                    messageForm.MessageText = "केही आन्तरिक त्रुटीको कारण मोहीको विवरण सच्याउन सकिएन।";
                     messageForm.ShowDialog();
                 }
 
                 if (result)
                 {
-                    messageForm = new MessageForm();
-                    messageForm.MessageText = "नयाँ मोहीको विवरण सफलतापूर्वक सुरक्षित गरियो।";
+                    messageForm.MessageText = "उक्त मोहीको विवरण सफलतापूर्वक अद्यावधिक गरियो।";
                     messageForm.ShowDialog();
                 }
-
-                // Clear fields for new entry
-                ClearFields();
             }
-            else
+
+            // If edit mode, then self close the form
+            if (tenant.TenantID > 0)
             {
-                messageForm = new MessageForm();
-                messageForm.MessageText = "उक्त मोहीको विवरण पहिले नै सुरक्षित गरिसकेको छ।";
-                messageForm.ShowDialog();
+                this.Close();
             }
         }
 
@@ -99,6 +132,17 @@ namespace ShadanandaGuthi
         private void TextBoxFather_TextChanged(object sender, EventArgs e)
         {
             EnableDisableSaveButton();
+        }
+
+        private void NewTenantForm_Load(object sender, EventArgs e)
+        {
+            if (tenant != null)
+            {
+                TextBoxFullname.Text=tenant.Fullname ;
+                TextBoxAddress.Text = tenant.Address;
+                TextBoxMobileNumber.Text = tenant.MobileNumber;
+                TextBoxFather.Text = tenant.Father;
+            }
         }
     }
 }

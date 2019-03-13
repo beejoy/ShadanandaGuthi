@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ShadanandaGuthiLibrary.Model;
 using System.Data;
 using System.Data.SqlClient;
+using ShadanandaGuthiLibrary.Model;
 
 namespace ShadanandaGuthiLibrary.DataAccess
 {
@@ -102,6 +99,39 @@ namespace ShadanandaGuthiLibrary.DataAccess
             }
 
             return leasesDT;
+        }
+
+        public List<LeaseLand> GetLeaseLandByTenantID(int tenantID)
+        {
+            List<LeaseLand> leaseLand = new List<LeaseLand>();
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "GetLeaseLandByTenantID";
+                    sqlCommand.Parameters.AddWithValue("@TenantID", tenantID);
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlConn.Open();
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        string landInfo = $"{dataReader[1].ToString()},   कित्ता नं.: {dataReader[2].ToString()}  क्षेत्रफल: {dataReader[3].ToString()}";
+                        leaseLand.Add(new LeaseLand((int)dataReader[0], landInfo, dataReader[4].ToString(), dataReader[5].ToString(),Convert.ToBoolean(dataReader[6].ToString())));
+                    }
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error : LeaseDA.GetLeaseLandByTenantID() method.");
+                }
+            }
+
+            return leaseLand;
         }
 
         public bool IsDuplicateLease(Lease leaseToCheck)

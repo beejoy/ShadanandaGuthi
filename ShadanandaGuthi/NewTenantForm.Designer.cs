@@ -162,6 +162,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "नयाँ मोही विवरण";
+            this.Load += new System.EventHandler(this.NewTenantForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

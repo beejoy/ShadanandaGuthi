@@ -45,13 +45,18 @@
   <ItemGroup>
     <Compile Include="DataAccess\GlobalConfig.cs" />
     <Compile Include="DataAccess\LeaseDA.cs" />
+    <Compile Include="DataAccess\LeasePaymentDA.cs" />
     <Compile Include="DataAccess\LocationDA.cs" />
     <Compile Include="DataAccess\LandDA.cs" />
+    <Compile Include="DataAccess\RentYearDA.cs" />
     <Compile Include="DataAccess\TenantDA.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Model\Land.cs" />
     <Compile Include="Model\Lease.cs" />
+    <Compile Include="Model\LeaseLand.cs" />
+    <Compile Include="Model\LeasePayment.cs" />
     <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\RentYear.cs" />
     <Compile Include="Model\Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

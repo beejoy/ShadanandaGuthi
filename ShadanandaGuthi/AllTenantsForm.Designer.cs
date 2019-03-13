@@ -61,6 +61,7 @@
             this.ColumnTenantFather = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonClose = new System.Windows.Forms.Button();
+            this.ButtonEditTenant = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLeases)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
             this.SuspendLayout();
@@ -77,10 +78,10 @@
             // 
             // ButtonDeleteTenant
             // 
-            this.ButtonDeleteTenant.Location = new System.Drawing.Point(730, 93);
+            this.ButtonDeleteTenant.Location = new System.Drawing.Point(730, 148);
             this.ButtonDeleteTenant.Name = "ButtonDeleteTenant";
             this.ButtonDeleteTenant.Size = new System.Drawing.Size(176, 41);
-            this.ButtonDeleteTenant.TabIndex = 5;
+            this.ButtonDeleteTenant.TabIndex = 6;
             this.ButtonDeleteTenant.Text = "मोही विवरण मेटाउनुहोस्";
             this.ButtonDeleteTenant.UseVisualStyleBackColor = true;
             this.ButtonDeleteTenant.Click += new System.EventHandler(this.ButtonDeleteTenant_Click);
@@ -277,16 +278,27 @@
             this.ButtonClose.Location = new System.Drawing.Point(730, 259);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(176, 41);
-            this.ButtonClose.TabIndex = 6;
+            this.ButtonClose.TabIndex = 7;
             this.ButtonClose.Text = "बन्द गर्नुहोस्";
             this.ButtonClose.UseVisualStyleBackColor = true;
             this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
+            // ButtonEditTenant
+            // 
+            this.ButtonEditTenant.Location = new System.Drawing.Point(730, 97);
+            this.ButtonEditTenant.Name = "ButtonEditTenant";
+            this.ButtonEditTenant.Size = new System.Drawing.Size(176, 41);
+            this.ButtonEditTenant.TabIndex = 5;
+            this.ButtonEditTenant.Text = "मोही विवरण सच्याउनुहोस्";
+            this.ButtonEditTenant.UseVisualStyleBackColor = true;
+            this.ButtonEditTenant.Click += new System.EventHandler(this.ButtonEditTenant_Click);
             // 
             // AllTenantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 557);
+            this.Controls.Add(this.ButtonEditTenant);
             this.Controls.Add(this.ButtonAddNewTenant);
             this.Controls.Add(this.ButtonDeleteTenant);
             this.Controls.Add(this.label2);
@@ -333,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAnnualRent;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnIsCurrent;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRemarks;
+        private System.Windows.Forms.Button ButtonEditTenant;
     }
 }
