@@ -7,6 +7,36 @@ namespace ShadanandaGuthiLibrary.DataAccess
 {
     public class LeasePaymentDA
     {
+        public DataTable GetLeasePaymentDetailsByTenantIDYearID(int tenantID, int yearID)
+        {
+            DataTable paymentDetailsDT = new DataTable();
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "GetPaymentDetailsByTenantIDYearID";
+                    sqlCommand.Parameters.AddWithValue("@TenantID", tenantID);
+                    sqlCommand.Parameters.AddWithValue("@YearID", yearID);
+                    sqlCommand.Connection = sqlConn;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+
+                    sqlConn.Open();
+                    adapter.Fill(paymentDetailsDT);
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error : LeasePaymentDA.GetPaymentDetailsByTenantIDYearID() method.");
+                }
+            }
+
+            return paymentDetailsDT;
+        }
+
         public bool IsDuplicatePayment(int leaseID, int yearID)
         {
             bool result = false;

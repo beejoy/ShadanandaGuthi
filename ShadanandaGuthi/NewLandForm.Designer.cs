@@ -129,6 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(435, 237);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonQuit);
             this.Controls.Add(this.LabelLandAreaHint);

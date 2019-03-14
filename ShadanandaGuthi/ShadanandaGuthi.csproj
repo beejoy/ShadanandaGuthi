@@ -120,6 +120,12 @@
     <Compile Include="TenantRegisterAndTransferForm.Designer.cs">
       <DependentUpon>TenantRegisterAndTransferForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TenantwiseLeasePaymentDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenantwiseLeasePaymentDetailForm.Designer.cs">
+      <DependentUpon>TenantwiseLeasePaymentDetailForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AllLandsForm.resx">
       <DependentUpon>AllLandsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="TenantRegisterAndTransferForm.resx">
       <DependentUpon>TenantRegisterAndTransferForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenantwiseLeasePaymentDetailForm.resx">
+      <DependentUpon>TenantwiseLeasePaymentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

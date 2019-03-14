@@ -78,7 +78,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return tenants;
         }
 
-        public List<Tenant> GetAllTenants()
+        public List<Tenant> GetAllTenants(string filter = "")
         {
             List<Tenant> tenants = new List<Tenant>();
 
@@ -88,7 +88,15 @@ namespace ShadanandaGuthiLibrary.DataAccess
                 {
                     SqlCommand sqlCommand = new SqlCommand();
                     sqlCommand.CommandType = CommandType.Text;
-                    sqlCommand.CommandText = "SELECT tenant_id, fullname, address, mobile_no, father FROM Tenant ORDER BY fullname, address";
+                    if (filter == "")
+                    {
+                        sqlCommand.CommandText = "SELECT tenant_id, fullname, address, mobile_no, father FROM Tenant ORDER BY fullname, address";
+                    }
+                    else
+                    {
+                        sqlCommand.CommandText = $"SELECT tenant_id, fullname, address, mobile_no, father FROM Tenant WHERE fullname LIKE N'{filter}%' ORDER BY fullname, address";
+                    }
+
                     sqlCommand.Connection = sqlConn;
 
                     sqlConn.Open();
@@ -109,7 +117,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return tenants;
         }
 
-        public List<Tenant> GetActiveTenants()
+        public List<Tenant> GetActiveTenants(string filter = "")
         {
             List<Tenant> tenants = new List<Tenant>();
 
@@ -119,7 +127,15 @@ namespace ShadanandaGuthiLibrary.DataAccess
                 {
                     SqlCommand sqlCommand = new SqlCommand();
                     sqlCommand.CommandType = CommandType.Text;
-                    sqlCommand.CommandText = "SELECT tenant_id, fullname, address, mobile_no, father FROM ActiveTenantsView ORDER BY fullname, address";
+                    if (filter == "")
+                    {
+                        sqlCommand.CommandText = "SELECT tenant_id, fullname, address, mobile_no, father FROM ActiveTenantsView ORDER BY fullname, address";
+                    }
+                    else
+                    {
+                        sqlCommand.CommandText = $"SELECT tenant_id, fullname, address, mobile_no, father FROM ActiveTenantsView WHERE fullname LIKE N'{filter}%' ORDER BY fullname, address";
+                    }
+
                     sqlCommand.Connection = sqlConn;
 
                     sqlConn.Open();

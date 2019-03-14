@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 67);
+            this.label2.Location = new System.Drawing.Point(24, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 3;
@@ -67,7 +67,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(375, 28);
+            this.label3.Location = new System.Drawing.Point(125, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // TextBoxLocalLevel
             // 
-            this.TextBoxLocalLevel.Location = new System.Drawing.Point(129, 64);
+            this.TextBoxLocalLevel.Location = new System.Drawing.Point(129, 92);
             this.TextBoxLocalLevel.Name = "TextBoxLocalLevel";
             this.TextBoxLocalLevel.Size = new System.Drawing.Size(240, 26);
             this.TextBoxLocalLevel.TabIndex = 4;
@@ -84,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(375, 67);
+            this.label4.Location = new System.Drawing.Point(125, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 5;
@@ -93,7 +93,7 @@
             // ButtonSave
             // 
             this.ButtonSave.Enabled = false;
-            this.ButtonSave.Location = new System.Drawing.Point(129, 120);
+            this.ButtonSave.Location = new System.Drawing.Point(129, 167);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(116, 41);
             this.ButtonSave.TabIndex = 6;
@@ -103,7 +103,7 @@
             // 
             // ButtonQuit
             // 
-            this.ButtonQuit.Location = new System.Drawing.Point(253, 120);
+            this.ButtonQuit.Location = new System.Drawing.Point(253, 167);
             this.ButtonQuit.Name = "ButtonQuit";
             this.ButtonQuit.Size = new System.Drawing.Size(116, 41);
             this.ButtonQuit.TabIndex = 7;
@@ -115,7 +115,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 186);
+            this.ClientSize = new System.Drawing.Size(398, 233);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonQuit);
             this.Controls.Add(this.label4);

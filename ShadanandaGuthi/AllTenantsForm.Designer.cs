@@ -133,6 +133,7 @@
             this.ColumnRemarks});
             this.DataGridViewLeases.Location = new System.Drawing.Point(28, 343);
             this.DataGridViewLeases.Name = "DataGridViewLeases";
+            this.DataGridViewLeases.ReadOnly = true;
             this.DataGridViewLeases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewLeases.Size = new System.Drawing.Size(878, 191);
             this.DataGridViewLeases.TabIndex = 3;
@@ -144,6 +145,7 @@
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn2.HeaderText = "क्र.सं.";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 59;
             // 
             // ColumnLocation
@@ -152,6 +154,7 @@
             this.ColumnLocation.HeaderText = "गा.वि.स.";
             this.ColumnLocation.MinimumWidth = 100;
             this.ColumnLocation.Name = "ColumnLocation";
+            this.ColumnLocation.ReadOnly = true;
             // 
             // ColumnPlotNumber
             // 
@@ -160,6 +163,7 @@
             this.ColumnPlotNumber.FillWeight = 80F;
             this.ColumnPlotNumber.HeaderText = "कित्ता नं.";
             this.ColumnPlotNumber.Name = "ColumnPlotNumber";
+            this.ColumnPlotNumber.ReadOnly = true;
             // 
             // ColumnLandArea
             // 
@@ -168,6 +172,7 @@
             this.ColumnLandArea.FillWeight = 80F;
             this.ColumnLandArea.HeaderText = "क्षेत्रफल";
             this.ColumnLandArea.Name = "ColumnLandArea";
+            this.ColumnLandArea.ReadOnly = true;
             // 
             // ColumnLeaseFrom
             // 
@@ -175,6 +180,7 @@
             this.ColumnLeaseFrom.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnLeaseFrom.HeaderText = "भोग चलन मिति";
             this.ColumnLeaseFrom.Name = "ColumnLeaseFrom";
+            this.ColumnLeaseFrom.ReadOnly = true;
             // 
             // ColumnAnnualRent
             // 
@@ -184,11 +190,13 @@
             this.ColumnAnnualRent.HeaderText = "वार्षिक ठेक्का";
             this.ColumnAnnualRent.MinimumWidth = 100;
             this.ColumnAnnualRent.Name = "ColumnAnnualRent";
+            this.ColumnAnnualRent.ReadOnly = true;
             // 
             // ColumnIsCurrent
             // 
             this.ColumnIsCurrent.HeaderText = "हाल भोग गरिरहेको हो?";
             this.ColumnIsCurrent.Name = "ColumnIsCurrent";
+            this.ColumnIsCurrent.ReadOnly = true;
             this.ColumnIsCurrent.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnIsCurrent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -197,6 +205,7 @@
             this.ColumnRemarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnRemarks.HeaderText = "कैफियत";
             this.ColumnRemarks.Name = "ColumnRemarks";
+            this.ColumnRemarks.ReadOnly = true;
             // 
             // DataGridViewTenants
             // 
@@ -223,6 +232,7 @@
             this.dataGridViewTextBoxColumn1});
             this.DataGridViewTenants.Location = new System.Drawing.Point(28, 46);
             this.DataGridViewTenants.Name = "DataGridViewTenants";
+            this.DataGridViewTenants.ReadOnly = true;
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewTenants.Size = new System.Drawing.Size(675, 254);
             this.DataGridViewTenants.TabIndex = 1;
@@ -235,6 +245,7 @@
             this.ColumnSNo.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnSNo.HeaderText = "क्र.सं.";
             this.ColumnSNo.Name = "ColumnSNo";
+            this.ColumnSNo.ReadOnly = true;
             this.ColumnSNo.Width = 59;
             // 
             // ColumnTenantName
@@ -243,6 +254,7 @@
             this.ColumnTenantName.HeaderText = "मोहीको नाम";
             this.ColumnTenantName.MinimumWidth = 100;
             this.ColumnTenantName.Name = "ColumnTenantName";
+            this.ColumnTenantName.ReadOnly = true;
             // 
             // ColumnTenantAddress
             // 
@@ -252,6 +264,7 @@
             this.ColumnTenantAddress.HeaderText = "ठेगाना";
             this.ColumnTenantAddress.MinimumWidth = 100;
             this.ColumnTenantAddress.Name = "ColumnTenantAddress";
+            this.ColumnTenantAddress.ReadOnly = true;
             // 
             // ColumnTenantMobileNumber
             // 
@@ -259,6 +272,7 @@
             this.ColumnTenantMobileNumber.DefaultCellStyle = dataGridViewCellStyle12;
             this.ColumnTenantMobileNumber.HeaderText = "मोबाइल नं.";
             this.ColumnTenantMobileNumber.Name = "ColumnTenantMobileNumber";
+            this.ColumnTenantMobileNumber.ReadOnly = true;
             // 
             // ColumnTenantFather
             // 
@@ -266,12 +280,14 @@
             this.ColumnTenantFather.HeaderText = "पिताको नाम";
             this.ColumnTenantFather.MinimumWidth = 100;
             this.ColumnTenantFather.Name = "ColumnTenantFather";
+            this.ColumnTenantFather.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.HeaderText = "";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // ButtonClose
             // 
@@ -298,6 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 557);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonEditTenant);
             this.Controls.Add(this.ButtonAddNewTenant);
             this.Controls.Add(this.ButtonDeleteTenant);

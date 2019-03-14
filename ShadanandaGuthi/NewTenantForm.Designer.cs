@@ -143,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(410, 262);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.TextBoxFather);

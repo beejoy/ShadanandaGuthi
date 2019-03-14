@@ -197,6 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 407);
+            this.ControlBox = false;
             this.Controls.Add(this.TextBoxRemarks);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TextBoxReceiptNumber);

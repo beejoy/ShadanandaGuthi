@@ -96,6 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 275);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonAddNewYear);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonDeleteYear);

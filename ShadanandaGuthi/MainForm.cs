@@ -149,5 +149,11 @@ namespace ShadanandaGuthi
             LeasePaymentForm leasePaymentForm = new LeasePaymentForm();
             leasePaymentForm.ShowDialog();
         }
+
+        private void ToolStripMenuItemRentDueByTenant_Click(object sender, EventArgs e)
+        {
+            TenantwiseLeasePaymentDetailForm paymentDetailForm = new TenantwiseLeasePaymentDetailForm();
+            paymentDetailForm.ShowDialog();
+        }
     }
 }
