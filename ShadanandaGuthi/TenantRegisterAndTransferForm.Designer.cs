@@ -48,6 +48,9 @@
             this.TextBoxRemarks = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.RadioButtonActionTransferRegistration = new System.Windows.Forms.RadioButton();
+            this.RadioButtonActionJointRegistration = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 70);
+            this.label2.Location = new System.Drawing.Point(23, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 2;
@@ -71,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 112);
+            this.label3.Location = new System.Drawing.Point(23, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 4;
@@ -80,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 154);
+            this.label4.Location = new System.Drawing.Point(23, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 6;
@@ -89,10 +92,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 196);
+            this.label5.Location = new System.Drawing.Point(24, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 20);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 11;
             this.label5.Text = "भोग चलनको मिति :";
             // 
             // ComboBoxLocation
@@ -111,7 +114,7 @@
             this.ComboBoxLand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxLand.FormattingEnabled = true;
             this.ComboBoxLand.IntegralHeight = false;
-            this.ComboBoxLand.Location = new System.Drawing.Point(136, 67);
+            this.ComboBoxLand.Location = new System.Drawing.Point(136, 65);
             this.ComboBoxLand.Name = "ComboBoxLand";
             this.ComboBoxLand.Size = new System.Drawing.Size(252, 28);
             this.ComboBoxLand.TabIndex = 3;
@@ -122,36 +125,36 @@
             this.ComboBoxNewTenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxNewTenant.FormattingEnabled = true;
             this.ComboBoxNewTenant.IntegralHeight = false;
-            this.ComboBoxNewTenant.Location = new System.Drawing.Point(136, 151);
+            this.ComboBoxNewTenant.Location = new System.Drawing.Point(136, 145);
             this.ComboBoxNewTenant.Name = "ComboBoxNewTenant";
             this.ComboBoxNewTenant.Size = new System.Drawing.Size(252, 28);
             this.ComboBoxNewTenant.TabIndex = 7;
             // 
             // TextBoxLeaseFrom
             // 
-            this.TextBoxLeaseFrom.Location = new System.Drawing.Point(136, 193);
+            this.TextBoxLeaseFrom.Location = new System.Drawing.Point(136, 221);
             this.TextBoxLeaseFrom.Name = "TextBoxLeaseFrom";
             this.TextBoxLeaseFrom.Size = new System.Drawing.Size(135, 26);
-            this.TextBoxLeaseFrom.TabIndex = 9;
+            this.TextBoxLeaseFrom.TabIndex = 12;
             this.TextBoxLeaseFrom.TextChanged += new System.EventHandler(this.TextBoxLeaseFrom_TextChanged);
             // 
             // ButtonSave
             // 
             this.ButtonSave.Enabled = false;
-            this.ButtonSave.Location = new System.Drawing.Point(136, 357);
+            this.ButtonSave.Location = new System.Drawing.Point(136, 380);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(123, 41);
-            this.ButtonSave.TabIndex = 16;
+            this.ButtonSave.TabIndex = 19;
             this.ButtonSave.Text = "सुरक्षित गर्नुहोस्";
             this.ButtonSave.UseVisualStyleBackColor = true;
             this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // ButtonQuit
             // 
-            this.ButtonQuit.Location = new System.Drawing.Point(265, 357);
+            this.ButtonQuit.Location = new System.Drawing.Point(265, 380);
             this.ButtonQuit.Name = "ButtonQuit";
             this.ButtonQuit.Size = new System.Drawing.Size(123, 41);
-            this.ButtonQuit.TabIndex = 17;
+            this.ButtonQuit.TabIndex = 20;
             this.ButtonQuit.Text = "रद्द गर्नुहोस्";
             this.ButtonQuit.UseVisualStyleBackColor = true;
             this.ButtonQuit.Click += new System.EventHandler(this.ButtonQuit_Click);
@@ -159,10 +162,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(277, 196);
+            this.label6.Location = new System.Drawing.Point(277, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 20);
-            this.label6.TabIndex = 10;
+            this.label6.TabIndex = 13;
             this.label6.Text = "(जस्तै : २०७४-०४-०५)";
             // 
             // ComboBoxCurrentTenant
@@ -170,7 +173,7 @@
             this.ComboBoxCurrentTenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCurrentTenant.FormattingEnabled = true;
             this.ComboBoxCurrentTenant.IntegralHeight = false;
-            this.ComboBoxCurrentTenant.Location = new System.Drawing.Point(136, 109);
+            this.ComboBoxCurrentTenant.Location = new System.Drawing.Point(136, 105);
             this.ComboBoxCurrentTenant.Name = "ComboBoxCurrentTenant";
             this.ComboBoxCurrentTenant.Size = new System.Drawing.Size(252, 28);
             this.ComboBoxCurrentTenant.TabIndex = 5;
@@ -178,53 +181,88 @@
             // 
             // TextBoxAnnualRent
             // 
-            this.TextBoxAnnualRent.Location = new System.Drawing.Point(136, 233);
+            this.TextBoxAnnualRent.Location = new System.Drawing.Point(136, 259);
             this.TextBoxAnnualRent.Name = "TextBoxAnnualRent";
             this.TextBoxAnnualRent.Size = new System.Drawing.Size(135, 26);
-            this.TextBoxAnnualRent.TabIndex = 12;
+            this.TextBoxAnnualRent.TabIndex = 15;
             this.TextBoxAnnualRent.TextChanged += new System.EventHandler(this.TextBoxAnnualRent_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 236);
+            this.label7.Location = new System.Drawing.Point(24, 262);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 20);
-            this.label7.TabIndex = 11;
+            this.label7.TabIndex = 14;
             this.label7.Text = "वार्षिक ठेक्का :";
             // 
             // TextBoxRemarks
             // 
-            this.TextBoxRemarks.Location = new System.Drawing.Point(136, 273);
+            this.TextBoxRemarks.Location = new System.Drawing.Point(136, 297);
             this.TextBoxRemarks.Multiline = true;
             this.TextBoxRemarks.Name = "TextBoxRemarks";
             this.TextBoxRemarks.Size = new System.Drawing.Size(252, 58);
-            this.TextBoxRemarks.TabIndex = 15;
+            this.TextBoxRemarks.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 276);
+            this.label8.Location = new System.Drawing.Point(24, 297);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 20);
-            this.label8.TabIndex = 14;
+            this.label8.TabIndex = 17;
             this.label8.Text = "कैफियत :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(277, 236);
+            this.label9.Location = new System.Drawing.Point(277, 262);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 20);
-            this.label9.TabIndex = 13;
+            this.label9.TabIndex = 16;
             this.label9.Text = "(नगद वा जिन्सी)";
+            // 
+            // RadioButtonActionTransferRegistration
+            // 
+            this.RadioButtonActionTransferRegistration.AutoSize = true;
+            this.RadioButtonActionTransferRegistration.Checked = true;
+            this.RadioButtonActionTransferRegistration.Location = new System.Drawing.Point(136, 185);
+            this.RadioButtonActionTransferRegistration.Name = "RadioButtonActionTransferRegistration";
+            this.RadioButtonActionTransferRegistration.Size = new System.Drawing.Size(99, 24);
+            this.RadioButtonActionTransferRegistration.TabIndex = 9;
+            this.RadioButtonActionTransferRegistration.TabStop = true;
+            this.RadioButtonActionTransferRegistration.Text = "मोही हस्तान्तरण";
+            this.RadioButtonActionTransferRegistration.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonActionJointRegistration
+            // 
+            this.RadioButtonActionJointRegistration.AutoSize = true;
+            this.RadioButtonActionJointRegistration.Location = new System.Drawing.Point(265, 185);
+            this.RadioButtonActionJointRegistration.Name = "RadioButtonActionJointRegistration";
+            this.RadioButtonActionJointRegistration.Size = new System.Drawing.Size(77, 24);
+            this.RadioButtonActionJointRegistration.TabIndex = 10;
+            this.RadioButtonActionJointRegistration.TabStop = true;
+            this.RadioButtonActionJointRegistration.Text = "संयुक्त दर्ता";
+            this.RadioButtonActionJointRegistration.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 187);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 20);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "दर्ता / हस्तान्तरण :";
             // 
             // TenantRegisterAndTransferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 420);
+            this.ClientSize = new System.Drawing.Size(415, 443);
             this.ControlBox = false;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.RadioButtonActionJointRegistration);
+            this.Controls.Add(this.RadioButtonActionTransferRegistration);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.TextBoxRemarks);
             this.Controls.Add(this.label8);
@@ -252,6 +290,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "मोही दर्ता तथा हस्तान्तरण";
+            this.Activated += new System.EventHandler(this.TenantRegisterAndTransferForm_Activated);
             this.Load += new System.EventHandler(this.TenantRegisterAndTransferForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,5 +318,8 @@
         private System.Windows.Forms.TextBox TextBoxRemarks;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton RadioButtonActionTransferRegistration;
+        private System.Windows.Forms.RadioButton RadioButtonActionJointRegistration;
+        private System.Windows.Forms.Label label10;
     }
 }

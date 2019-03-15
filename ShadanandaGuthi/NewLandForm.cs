@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 using ShadanandaGuthiLibrary.DataAccess;
 using ShadanandaGuthiLibrary.Model;
 
@@ -88,6 +79,16 @@ namespace ShadanandaGuthi
             this.Close();
         }
 
+        private void TextBoxPlotNumber_TextChanged(object sender, EventArgs e)
+        {
+            EnableDisableSaveButton();
+        }
+
+        private void TextBoxLandArea_TextChanged(object sender, EventArgs e)
+        {
+            EnableDisableSaveButton();
+        }
+
         #region Private Helper Methods
 
         private void ClearFields()
@@ -98,22 +99,16 @@ namespace ShadanandaGuthi
 
             ComboBoxLocation.Focus();
         }
+
+        private void EnableDisableSaveButton()
+        {
+            if (ComboBoxLocation.Items.Count > 0 && TextBoxPlotNumber.TextLength > 0 && TextBoxLandArea.TextLength > 0)
+                ButtonSave.Enabled = true;
+            else
+                ButtonSave.Enabled = false;
+        }
+
         #endregion
 
-        private void TextBoxPlotNumber_TextChanged(object sender, EventArgs e)
-        {
-            if (TextBoxPlotNumber.TextLength > 0 && TextBoxLandArea.TextLength > 0)
-                ButtonSave.Enabled = true;
-            else
-                ButtonSave.Enabled = false;
-        }
-
-        private void TextBoxLandArea_TextChanged(object sender, EventArgs e)
-        {
-            if (TextBoxPlotNumber.TextLength > 0 && TextBoxLandArea.TextLength > 0)
-                ButtonSave.Enabled = true;
-            else
-                ButtonSave.Enabled = false;
-        }
     }
 }

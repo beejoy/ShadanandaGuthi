@@ -45,14 +45,14 @@
             this.ComboBoxLocation.FormattingEnabled = true;
             this.ComboBoxLocation.IntegralHeight = false;
             this.ComboBoxLocation.ItemHeight = 20;
-            this.ComboBoxLocation.Location = new System.Drawing.Point(155, 27);
+            this.ComboBoxLocation.Location = new System.Drawing.Point(145, 27);
             this.ComboBoxLocation.Name = "ComboBoxLocation";
             this.ComboBoxLocation.Size = new System.Drawing.Size(252, 28);
             this.ComboBoxLocation.TabIndex = 1;
             // 
             // TextBoxPlotNumber
             // 
-            this.TextBoxPlotNumber.Location = new System.Drawing.Point(155, 70);
+            this.TextBoxPlotNumber.Location = new System.Drawing.Point(145, 70);
             this.TextBoxPlotNumber.Name = "TextBoxPlotNumber";
             this.TextBoxPlotNumber.Size = new System.Drawing.Size(129, 26);
             this.TextBoxPlotNumber.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             // TextBoxLandArea
             // 
-            this.TextBoxLandArea.Location = new System.Drawing.Point(155, 112);
+            this.TextBoxLandArea.Location = new System.Drawing.Point(145, 112);
             this.TextBoxLandArea.Name = "TextBoxLandArea";
             this.TextBoxLandArea.Size = new System.Drawing.Size(129, 26);
             this.TextBoxLandArea.TabIndex = 5;
@@ -87,7 +87,7 @@
             // LabelLandArea
             // 
             this.LabelLandArea.AutoSize = true;
-            this.LabelLandArea.Location = new System.Drawing.Point(24, 114);
+            this.LabelLandArea.Location = new System.Drawing.Point(25, 114);
             this.LabelLandArea.Name = "LabelLandArea";
             this.LabelLandArea.Size = new System.Drawing.Size(90, 20);
             this.LabelLandArea.TabIndex = 4;
@@ -96,7 +96,7 @@
             // LabelLandAreaHint
             // 
             this.LabelLandAreaHint.AutoSize = true;
-            this.LabelLandAreaHint.Location = new System.Drawing.Point(290, 114);
+            this.LabelLandAreaHint.Location = new System.Drawing.Point(280, 114);
             this.LabelLandAreaHint.Name = "LabelLandAreaHint";
             this.LabelLandAreaHint.Size = new System.Drawing.Size(118, 20);
             this.LabelLandAreaHint.TabIndex = 8;
@@ -104,7 +104,7 @@
             // 
             // ButtonQuit
             // 
-            this.ButtonQuit.Location = new System.Drawing.Point(284, 168);
+            this.ButtonQuit.Location = new System.Drawing.Point(274, 168);
             this.ButtonQuit.Name = "ButtonQuit";
             this.ButtonQuit.Size = new System.Drawing.Size(123, 41);
             this.ButtonQuit.TabIndex = 7;
@@ -115,7 +115,7 @@
             // ButtonSave
             // 
             this.ButtonSave.Enabled = false;
-            this.ButtonSave.Location = new System.Drawing.Point(155, 168);
+            this.ButtonSave.Location = new System.Drawing.Point(145, 168);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(123, 41);
             this.ButtonSave.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(435, 237);
+            this.ClientSize = new System.Drawing.Size(427, 232);
             this.ControlBox = false;
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonQuit);

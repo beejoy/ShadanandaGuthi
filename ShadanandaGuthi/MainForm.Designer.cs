@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemUser = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemLoginLogout = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,9 +55,9 @@
             this.ToolStripMenuItemTenantList = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemLease = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemLeaseRentPayment = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemRentDue = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemRentDueByTenant = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemRentDueByAllTenants = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemRentPaid = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemRentPaidByTenant = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemRentPaidByAllTenants = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemMisc = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemCurrentYear = new System.Windows.Forms.ToolStripMenuItem();
             this.SplitContainerVertical = new System.Windows.Forms.SplitContainer();
@@ -82,6 +83,7 @@
             this.ColumnLandArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ToolStripMenuItemTenantDeregister = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).BeginInit();
             this.SplitContainerVertical.Panel1.SuspendLayout();
@@ -198,6 +200,7 @@
             this.ToolStripMenuItemTenant.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemNewTenant,
             this.ToolStripMenuItemTenantRegisterAndTransfer,
+            this.ToolStripMenuItemTenantDeregister,
             this.ToolStripMenuItemTenantList});
             this.ToolStripMenuItemTenant.Name = "ToolStripMenuItemTenant";
             this.ToolStripMenuItemTenant.Size = new System.Drawing.Size(42, 24);
@@ -228,7 +231,7 @@
             // 
             this.ToolStripMenuItemLease.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemLeaseRentPayment,
-            this.ToolStripMenuItemRentDue});
+            this.ToolStripMenuItemRentPaid});
             this.ToolStripMenuItemLease.Name = "ToolStripMenuItemLease";
             this.ToolStripMenuItemLease.Size = new System.Drawing.Size(49, 24);
             this.ToolStripMenuItemLease.Text = "ठेक्का";
@@ -240,27 +243,27 @@
             this.ToolStripMenuItemLeaseRentPayment.Text = "ठेक्का संकलन";
             this.ToolStripMenuItemLeaseRentPayment.Click += new System.EventHandler(this.ToolStripMenuItemLeaseRentPayment_Click);
             // 
-            // ToolStripMenuItemRentDue
+            // ToolStripMenuItemRentPaid
             // 
-            this.ToolStripMenuItemRentDue.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItemRentDueByTenant,
-            this.ToolStripMenuItemRentDueByAllTenants});
-            this.ToolStripMenuItemRentDue.Name = "ToolStripMenuItemRentDue";
-            this.ToolStripMenuItemRentDue.Size = new System.Drawing.Size(180, 24);
-            this.ToolStripMenuItemRentDue.Text = "ठेक्का विवरण";
+            this.ToolStripMenuItemRentPaid.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemRentPaidByTenant,
+            this.ToolStripMenuItemRentPaidByAllTenants});
+            this.ToolStripMenuItemRentPaid.Name = "ToolStripMenuItemRentPaid";
+            this.ToolStripMenuItemRentPaid.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemRentPaid.Text = "ठेक्का तिरेको विवरण";
             // 
-            // ToolStripMenuItemRentDueByTenant
+            // ToolStripMenuItemRentPaidByTenant
             // 
-            this.ToolStripMenuItemRentDueByTenant.Name = "ToolStripMenuItemRentDueByTenant";
-            this.ToolStripMenuItemRentDueByTenant.Size = new System.Drawing.Size(180, 24);
-            this.ToolStripMenuItemRentDueByTenant.Text = "मोही अनुसार";
-            this.ToolStripMenuItemRentDueByTenant.Click += new System.EventHandler(this.ToolStripMenuItemRentDueByTenant_Click);
+            this.ToolStripMenuItemRentPaidByTenant.Name = "ToolStripMenuItemRentPaidByTenant";
+            this.ToolStripMenuItemRentPaidByTenant.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemRentPaidByTenant.Text = "मोही अनुसार";
+            this.ToolStripMenuItemRentPaidByTenant.Click += new System.EventHandler(this.ToolStripMenuItemRentPaidByTenant_Click);
             // 
-            // ToolStripMenuItemRentDueByAllTenants
+            // ToolStripMenuItemRentPaidByAllTenants
             // 
-            this.ToolStripMenuItemRentDueByAllTenants.Name = "ToolStripMenuItemRentDueByAllTenants";
-            this.ToolStripMenuItemRentDueByAllTenants.Size = new System.Drawing.Size(180, 24);
-            this.ToolStripMenuItemRentDueByAllTenants.Text = "सबैको एकमुष्ट सूची";
+            this.ToolStripMenuItemRentPaidByAllTenants.Name = "ToolStripMenuItemRentPaidByAllTenants";
+            this.ToolStripMenuItemRentPaidByAllTenants.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemRentPaidByAllTenants.Text = "सबैको एकमुष्ट सूची";
             // 
             // ToolStripMenuItemMisc
             // 
@@ -346,7 +349,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(327, 292);
+            this.label3.Location = new System.Drawing.Point(280, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 3;
@@ -392,11 +395,11 @@
             this.ColumnMobileNumber,
             this.ColumnFather,
             this.ColumnLast});
-            this.DataGridViewTenants.Location = new System.Drawing.Point(330, 315);
+            this.DataGridViewTenants.Location = new System.Drawing.Point(283, 315);
             this.DataGridViewTenants.Name = "DataGridViewTenants";
             this.DataGridViewTenants.ReadOnly = true;
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewTenants.Size = new System.Drawing.Size(596, 100);
+            this.DataGridViewTenants.Size = new System.Drawing.Size(643, 100);
             this.DataGridViewTenants.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn2
@@ -478,7 +481,7 @@
             this.ListBoxLocations.ItemHeight = 20;
             this.ListBoxLocations.Location = new System.Drawing.Point(7, 33);
             this.ListBoxLocations.Name = "ListBoxLocations";
-            this.ListBoxLocations.Size = new System.Drawing.Size(303, 382);
+            this.ListBoxLocations.Size = new System.Drawing.Size(255, 382);
             this.ListBoxLocations.TabIndex = 0;
             this.ListBoxLocations.SelectedIndexChanged += new System.EventHandler(this.ListBoxLocations_SelectedIndexChanged);
             // 
@@ -486,7 +489,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(326, 10);
+            this.label2.Location = new System.Drawing.Point(279, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 2;
@@ -516,11 +519,11 @@
             this.ColumnPlotNumber,
             this.ColumnLandArea,
             this.dataGridViewTextBoxColumn1});
-            this.DataGridViewLands.Location = new System.Drawing.Point(330, 33);
+            this.DataGridViewLands.Location = new System.Drawing.Point(283, 33);
             this.DataGridViewLands.Name = "DataGridViewLands";
             this.DataGridViewLands.ReadOnly = true;
             this.DataGridViewLands.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewLands.Size = new System.Drawing.Size(596, 235);
+            this.DataGridViewLands.Size = new System.Drawing.Size(643, 235);
             this.DataGridViewLands.TabIndex = 0;
             this.DataGridViewLands.SelectionChanged += new System.EventHandler(this.DataGridViewLands_SelectionChanged);
             // 
@@ -578,6 +581,12 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // ToolStripMenuItemTenantDeregister
+            // 
+            this.ToolStripMenuItemTenantDeregister.Name = "ToolStripMenuItemTenantDeregister";
+            this.ToolStripMenuItemTenantDeregister.Size = new System.Drawing.Size(191, 24);
+            this.ToolStripMenuItemTenantDeregister.Text = "मोही दर्ता खारेज";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -587,6 +596,7 @@
             this.Controls.Add(this.SplitContainerVertical);
             this.Controls.Add(this.MainMenuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -626,10 +636,10 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemLeaseRentPayment;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemLandList;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemTenantList;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentDue;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentPaid;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNewLocation;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentDueByTenant;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentDueByAllTenants;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentPaidByTenant;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRentPaidByAllTenants;
         private System.Windows.Forms.SplitContainer SplitContainerVertical;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer SplitContainerHorizontal;
@@ -661,6 +671,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlotNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLandArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemTenantDeregister;
     }
 }
 

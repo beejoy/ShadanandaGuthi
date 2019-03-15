@@ -14,6 +14,13 @@ namespace ShadanandaGuthi
             InitializeComponent();
         }
 
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            PopulateLocationListBox();
+        }
+
+        #region ToolStripMenu Commands
+
         private void ToolStripMenuItemQuit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,8 +42,17 @@ namespace ShadanandaGuthi
 
         private void ToolStripMenuItemLandList_Click(object sender, EventArgs e)
         {
-            AllLandsForm allLandsForm = new AllLandsForm();
-            allLandsForm.ShowDialog();
+            try
+            {
+                AllLandsForm allLandsForm = new AllLandsForm();
+                allLandsForm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageForm messageForm = new MessageForm();
+                messageForm.MessageText = "अनुप्रयोगको आन्तरिक प्रणाली सुरु हुँदैछ। केही बेर पर्खनु होला।";
+                messageForm.ShowDialog();
+            }
         }
 
         private void ToolStripMenuItemNewTenant_Click(object sender, EventArgs e)
@@ -57,16 +73,31 @@ namespace ShadanandaGuthi
             newTenantRegister.ShowDialog();
         }
 
-        private void PopulateLocationListBox()
+        private void ToolStripMenuItemTenantList_Click(object sender, EventArgs e)
         {
-            List<Location> locations = new List<Location>();
-            LocationDA locDa = new LocationDA();
-
-            locations = locDa.GetLocationsHavingLands();
-            ListBoxLocations.DataSource = locations;
-            ListBoxLocations.DisplayMember = "LocationPreviousVDC";
-            ListBoxLocations.ValueMember = "LocationID";
+            AllTenantsForm allTenantsForm = new AllTenantsForm();
+            allTenantsForm.ShowDialog();
         }
+
+        private void ToolStripMenuItemCurrentYear_Click(object sender, EventArgs e)
+        {
+            CurrentYearForm currentYearForm = new CurrentYearForm();
+            currentYearForm.ShowDialog();
+        }
+
+        private void ToolStripMenuItemLeaseRentPayment_Click(object sender, EventArgs e)
+        {
+            LeasePaymentForm leasePaymentForm = new LeasePaymentForm();
+            leasePaymentForm.ShowDialog();
+        }
+
+        private void ToolStripMenuItemRentPaidByTenant_Click(object sender, EventArgs e)
+        {
+            TenantwiseLeasePaymentDetailForm paymentDetailForm = new TenantwiseLeasePaymentDetailForm();
+            paymentDetailForm.ShowDialog();
+        }
+
+        #endregion
 
         private void ListBoxLocations_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -127,33 +158,16 @@ namespace ShadanandaGuthi
             }
         }
 
-        private void ToolStripMenuItemTenantList_Click(object sender, EventArgs e)
+        private void PopulateLocationListBox()
         {
-            AllTenantsForm allTenantsForm = new AllTenantsForm();
-            allTenantsForm.ShowDialog();
+            List<Location> locations = new List<Location>();
+            LocationDA locDa = new LocationDA();
+
+            locations = locDa.GetLocationsHavingLands();
+            ListBoxLocations.DataSource = locations;
+            ListBoxLocations.DisplayMember = "LocationPreviousVDC";
+            ListBoxLocations.ValueMember = "LocationID";
         }
 
-        private void MainForm_Activated(object sender, EventArgs e)
-        {
-            PopulateLocationListBox();
-        }
-
-        private void ToolStripMenuItemCurrentYear_Click(object sender, EventArgs e)
-        {
-            CurrentYearForm currentYearForm = new CurrentYearForm();
-            currentYearForm.ShowDialog();
-        }
-
-        private void ToolStripMenuItemLeaseRentPayment_Click(object sender, EventArgs e)
-        {
-            LeasePaymentForm leasePaymentForm = new LeasePaymentForm();
-            leasePaymentForm.ShowDialog();
-        }
-
-        private void ToolStripMenuItemRentDueByTenant_Click(object sender, EventArgs e)
-        {
-            TenantwiseLeasePaymentDetailForm paymentDetailForm = new TenantwiseLeasePaymentDetailForm();
-            paymentDetailForm.ShowDialog();
-        }
     }
 }

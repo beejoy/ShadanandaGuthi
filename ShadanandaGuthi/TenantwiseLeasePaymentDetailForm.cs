@@ -35,7 +35,11 @@ namespace ShadanandaGuthi
         {
             if (DataGridViewTenants.Rows.Count > 0)
             {
-                UpdatePaymentDetailsDGV();
+                // Make sure there's at least one RentYear in the combobox
+                if (ComboBoxRentYear.Items.Count > 0)
+                {
+                    UpdatePaymentDetailsDGV();
+                }
                 PopulateLeasedLands();
             }
         }
@@ -43,7 +47,7 @@ namespace ShadanandaGuthi
         private void ComboBoxRentYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Act only if DataGridViewTenants is populated
-            if (DataGridViewTenants.Rows.Count > 0)
+            if (DataGridViewTenants.Rows.Count > 0 && ComboBoxRentYear.Items.Count > 0)
             {
                 UpdatePaymentDetailsDGV();
             }

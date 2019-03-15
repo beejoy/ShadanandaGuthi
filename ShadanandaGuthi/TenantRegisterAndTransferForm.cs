@@ -20,22 +20,11 @@ namespace ShadanandaGuthi
             ToolTipMain.SetToolTip(ComboBoxLand, "जग्गा कित्ता छान्नुहोस्");
             ToolTipMain.SetToolTip(ComboBoxNewTenant, "नयाँ मोही छान्नुहोस्");
             ToolTipMain.SetToolTip(TextBoxLeaseFrom, "भोग चलन सुरु गरेको मिति जस्तै: २०७५-११-२२");
+        }
 
-            // Fill in Locations
-            try
-            {
-                LocationDA locDA = new LocationDA();
-
-                ComboBoxLocation.DataSource = locDA.GetLocationsHavingLands();
-                ComboBoxLocation.DisplayMember = "LocationPreviousVDC";
-                ComboBoxLocation.ValueMember = "LocationID";
-            }
-            catch (Exception)
-            {
-                MessageForm messageForm = new MessageForm();
-                messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण जग्गा भएको स्थानको विवरण लोड गर्न सकिएन।";
-                messageForm.ShowDialog();
-            }
+        private void TenantRegisterAndTransferForm_Activated(object sender, EventArgs e)
+        {
+            PopulateLocations();
         }
 
         private void ComboBoxLocation_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,6 +69,8 @@ namespace ShadanandaGuthi
                 messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण मोहीको विवरण लोड गर्न सकिएन।";
                 messageForm.ShowDialog();
             }
+
+            EnableDisableRadioButtons();
         }
 
         private void ComboBoxCurrentTenant_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,7 +81,8 @@ namespace ShadanandaGuthi
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             // Either register new tenant or transfer ownership from
-            // existing tenant to new tenant
+            // existing tenant to new tenant.
+
             // If current tenant is empty, we must register new tenant
             // otherwise we must transfer ownership.
             LeaseDA leaseDA = new LeaseDA();
@@ -109,16 +101,58 @@ namespace ShadanandaGuthi
 
             if (ComboBoxCurrentTenant.Items.Count > 0)
             {
+                // Check the action and act accordingly
+
                 // Transfer tenant ownership
-                Tenant currentTenant = (Tenant)ComboBoxCurrentTenant.SelectedItem;
-
-                result = leaseDA.TransferLease(currentTenant, newLease);
-
-                if (result)
+                if (RadioButtonActionTransferRegistration.Checked)
                 {
-                    messageForm = new MessageForm();
-                    messageForm.MessageText = "मोही हस्तान्तरणको विवरण सफलतापूर्वक सुरक्षित गरियो।";
-                    messageForm.ShowDialog();
+                    Tenant currentTenant = (Tenant)ComboBoxCurrentTenant.SelectedItem;
+
+                    result = leaseDA.TransferLease(currentTenant, newLease);
+
+                    if (result)
+                    {
+                        messageForm = new MessageForm();
+                        messageForm.MessageText = "मोही हस्तान्तरणको विवरण सफलतापूर्वक सुरक्षित गरियो।";
+                        messageForm.ShowDialog();
+                    }
+                }
+
+                // Joint registration
+                if (RadioButtonActionJointRegistration.Checked)
+                {
+                    // Check if this lease is already assigned
+                    if (!leaseDA.IsDuplicateLease(newLease))
+                    {
+                        // Save new lease
+                        try
+                        {
+                            result = leaseDA.SaveLease(newLease);
+                        }
+                        catch (Exception)
+                        {
+                            messageForm = new MessageForm();
+                            messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण मोही दर्ताको विवरण सुरक्षित गर्न सकिएन।";
+                            messageForm.ShowDialog();
+                        }
+
+                        if (result)
+                        {
+                            messageForm = new MessageForm();
+                            messageForm.MessageText = "मोही दतार्को विवरण सफलतापूर्वक सुरक्षित गरियो।";
+                            messageForm.ShowDialog();
+                        }
+
+                        // Clear fields for new entry
+                        ClearFields();
+                    }
+                    else
+                    {
+                        // duplicate lease
+                        messageForm = new MessageForm();
+                        messageForm.MessageText = $"उक्त जग्गा पहिले नै {newTenant.Fullname}को नाममा दर्ता भइसकेको छ।";
+                        messageForm.ShowDialog();
+                    }
                 }
             }
             else
@@ -176,13 +210,27 @@ namespace ShadanandaGuthi
 
         private void EnableDisableSaveButton()
         {
-            if (TextBoxLeaseFrom.TextLength > 0 && TextBoxAnnualRent.TextLength > 0)
+            if (ComboBoxLocation.Items.Count > 0 && ComboBoxLand.Items.Count > 0 && ComboBoxNewTenant.Items.Count > 0 && TextBoxLeaseFrom.TextLength > 0 && TextBoxAnnualRent.TextLength > 0)
             {
                 ButtonSave.Enabled = true;
             }
             else
             {
                 ButtonSave.Enabled = false;
+            }
+        }
+
+        private void EnableDisableRadioButtons()
+        {
+            if (ComboBoxCurrentTenant.Items.Count > 0)
+            {
+                RadioButtonActionJointRegistration.Enabled = true;
+                RadioButtonActionTransferRegistration.Enabled = true;
+            }
+            else
+            {
+                RadioButtonActionJointRegistration.Enabled = false;
+                RadioButtonActionTransferRegistration.Enabled = false;
             }
         }
 
@@ -226,5 +274,25 @@ namespace ShadanandaGuthi
                 
             //}
         }
+
+        private void PopulateLocations()
+        {
+            // Fill in Locations
+            try
+            {
+                LocationDA locDA = new LocationDA();
+
+                ComboBoxLocation.DataSource = locDA.GetLocationsHavingLands();
+                ComboBoxLocation.DisplayMember = "LocationPreviousVDC";
+                ComboBoxLocation.ValueMember = "LocationID";
+            }
+            catch (Exception)
+            {
+                MessageForm messageForm = new MessageForm();
+                messageForm.MessageText = "ओहो! केही आन्तरिक त्रुटीको कारण जग्गा भएको स्थानको विवरण लोड गर्न सकिएन।";
+                messageForm.ShowDialog();
+            }
+        }
+
     }
 }

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.TextBoxFilterTenantName = new System.Windows.Forms.TextBox();
             this.DataGridViewTenants = new System.Windows.Forms.DataGridView();
@@ -49,12 +49,6 @@
             this.ComboBoxRentYear = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DataGridViewPaymentDetails = new System.Windows.Forms.DataGridView();
-            this.ColumnSNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTenantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnMobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFather = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +60,12 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ListBoxLeasedLands = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ColumnSNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTenantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnMobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFather = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPaymentDetails)).BeginInit();
             this.SuspendLayout();
@@ -91,17 +91,17 @@
             // 
             this.DataGridViewTenants.AllowUserToAddRows = false;
             this.DataGridViewTenants.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.DataGridViewTenants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
+            this.DataGridViewTenants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.DataGridViewTenants.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewTenants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewTenants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.DataGridViewTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewTenants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnSNo,
@@ -142,9 +142,9 @@
             // 
             this.ComboBoxRentYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxRentYear.FormattingEnabled = true;
-            this.ComboBoxRentYear.Location = new System.Drawing.Point(521, 23);
+            this.ComboBoxRentYear.Location = new System.Drawing.Point(530, 23);
             this.ComboBoxRentYear.Name = "ComboBoxRentYear";
-            this.ComboBoxRentYear.Size = new System.Drawing.Size(96, 28);
+            this.ComboBoxRentYear.Size = new System.Drawing.Size(87, 28);
             this.ComboBoxRentYear.TabIndex = 3;
             this.ComboBoxRentYear.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRentYear_SelectedIndexChanged);
             // 
@@ -161,17 +161,17 @@
             // 
             this.DataGridViewPaymentDetails.AllowUserToAddRows = false;
             this.DataGridViewPaymentDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            this.DataGridViewPaymentDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.AliceBlue;
+            this.DataGridViewPaymentDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             this.DataGridViewPaymentDetails.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewPaymentDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewPaymentDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.DataGridViewPaymentDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewPaymentDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -192,61 +192,10 @@
             this.DataGridViewPaymentDetails.TabIndex = 6;
             this.DataGridViewPaymentDetails.TabStop = false;
             // 
-            // ColumnSNo
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnSNo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnSNo.HeaderText = "क्र.सं.";
-            this.ColumnSNo.MinimumWidth = 70;
-            this.ColumnSNo.Name = "ColumnSNo";
-            this.ColumnSNo.ReadOnly = true;
-            this.ColumnSNo.Width = 70;
-            // 
-            // ColumnTenantName
-            // 
-            this.ColumnTenantName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ColumnTenantName.HeaderText = "मोहीको नाम";
-            this.ColumnTenantName.MinimumWidth = 100;
-            this.ColumnTenantName.Name = "ColumnTenantName";
-            this.ColumnTenantName.ReadOnly = true;
-            // 
-            // ColumnAddress
-            // 
-            this.ColumnAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ColumnAddress.HeaderText = "ठेगाना";
-            this.ColumnAddress.MinimumWidth = 100;
-            this.ColumnAddress.Name = "ColumnAddress";
-            this.ColumnAddress.ReadOnly = true;
-            // 
-            // ColumnMobileNumber
-            // 
-            this.ColumnMobileNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnMobileNumber.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColumnMobileNumber.HeaderText = "मोबाइल नं.";
-            this.ColumnMobileNumber.MinimumWidth = 100;
-            this.ColumnMobileNumber.Name = "ColumnMobileNumber";
-            this.ColumnMobileNumber.ReadOnly = true;
-            // 
-            // ColumnFather
-            // 
-            this.ColumnFather.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ColumnFather.HeaderText = "पिता";
-            this.ColumnFather.MinimumWidth = 100;
-            this.ColumnFather.Name = "ColumnFather";
-            this.ColumnFather.ReadOnly = true;
-            // 
-            // ColumnLast
-            // 
-            this.ColumnLast.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnLast.HeaderText = "";
-            this.ColumnLast.Name = "ColumnLast";
-            this.ColumnLast.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn1.HeaderText = "क्र.सं.";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 70;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -264,8 +213,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn3.HeaderText = "कित्ता नं.";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 80;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -275,8 +224,8 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle22;
             this.Column4.HeaderText = "क्षेत्रफल";
             this.Column4.MinimumWidth = 100;
             this.Column4.Name = "Column4";
@@ -285,8 +234,8 @@
             // ColumnRentYear
             // 
             this.ColumnRentYear.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnRentYear.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnRentYear.DefaultCellStyle = dataGridViewCellStyle23;
             this.ColumnRentYear.HeaderText = "ठेक्का वर्ष";
             this.ColumnRentYear.MinimumWidth = 70;
             this.ColumnRentYear.Name = "ColumnRentYear";
@@ -296,8 +245,8 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle24;
             this.Column5.HeaderText = "तिरेको ठेक्का";
             this.Column5.MinimumWidth = 100;
             this.Column5.Name = "Column5";
@@ -306,8 +255,8 @@
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle25;
             this.Column6.HeaderText = "मिति";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -316,8 +265,8 @@
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle26;
             this.Column7.HeaderText = "रसिद नं.";
             this.Column7.MinimumWidth = 70;
             this.Column7.Name = "Column7";
@@ -349,6 +298,57 @@
             this.label4.Size = new System.Drawing.Size(150, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "मोहीको नाममा दर्ता रहेको जग्गा";
+            // 
+            // ColumnSNo
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnSNo.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ColumnSNo.HeaderText = "क्र.सं.";
+            this.ColumnSNo.MinimumWidth = 70;
+            this.ColumnSNo.Name = "ColumnSNo";
+            this.ColumnSNo.ReadOnly = true;
+            this.ColumnSNo.Width = 70;
+            // 
+            // ColumnTenantName
+            // 
+            this.ColumnTenantName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ColumnTenantName.HeaderText = "मोहीको नाम";
+            this.ColumnTenantName.MinimumWidth = 100;
+            this.ColumnTenantName.Name = "ColumnTenantName";
+            this.ColumnTenantName.ReadOnly = true;
+            // 
+            // ColumnAddress
+            // 
+            this.ColumnAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ColumnAddress.HeaderText = "ठेगाना";
+            this.ColumnAddress.MinimumWidth = 100;
+            this.ColumnAddress.Name = "ColumnAddress";
+            this.ColumnAddress.ReadOnly = true;
+            // 
+            // ColumnMobileNumber
+            // 
+            this.ColumnMobileNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnMobileNumber.DefaultCellStyle = dataGridViewCellStyle17;
+            this.ColumnMobileNumber.HeaderText = "मोबाइल नं.";
+            this.ColumnMobileNumber.MinimumWidth = 100;
+            this.ColumnMobileNumber.Name = "ColumnMobileNumber";
+            this.ColumnMobileNumber.ReadOnly = true;
+            // 
+            // ColumnFather
+            // 
+            this.ColumnFather.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ColumnFather.HeaderText = "पिताको नाम";
+            this.ColumnFather.MinimumWidth = 100;
+            this.ColumnFather.Name = "ColumnFather";
+            this.ColumnFather.ReadOnly = true;
+            // 
+            // ColumnLast
+            // 
+            this.ColumnLast.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnLast.HeaderText = "";
+            this.ColumnLast.Name = "ColumnLast";
+            this.ColumnLast.ReadOnly = true;
             // 
             // TenantwiseLeasePaymentDetailForm
             // 
@@ -393,12 +393,6 @@
         private System.Windows.Forms.ComboBox ComboBoxRentYear;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView DataGridViewPaymentDetails;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenantName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMobileNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFather;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLast;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -410,5 +404,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.ListBox ListBoxLeasedLands;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenantName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMobileNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFather;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLast;
     }
 }

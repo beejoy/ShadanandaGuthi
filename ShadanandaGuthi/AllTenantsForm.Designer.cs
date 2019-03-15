@@ -78,6 +78,7 @@
             // 
             // ButtonDeleteTenant
             // 
+            this.ButtonDeleteTenant.Enabled = false;
             this.ButtonDeleteTenant.Location = new System.Drawing.Point(730, 148);
             this.ButtonDeleteTenant.Name = "ButtonDeleteTenant";
             this.ButtonDeleteTenant.Size = new System.Drawing.Size(176, 41);
@@ -301,6 +302,7 @@
             // 
             // ButtonEditTenant
             // 
+            this.ButtonEditTenant.Enabled = false;
             this.ButtonEditTenant.Location = new System.Drawing.Point(730, 97);
             this.ButtonEditTenant.Name = "ButtonEditTenant";
             this.ButtonEditTenant.Size = new System.Drawing.Size(176, 41);

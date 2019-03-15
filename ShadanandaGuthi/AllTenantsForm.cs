@@ -20,23 +20,16 @@ namespace ShadanandaGuthi
             DataGridViewRow selectedRow = DataGridViewTenants.CurrentRow;
             PopulateLease(int.Parse(selectedRow.Tag.ToString()));
 
-            // If DataGridViewLease has no rows, we can assume 
-            // the selected tenant has no lease. So we can
-            // safely delete this tenant; enable the Delete button
-
-            if (DataGridViewLeases.Rows.Count > 0)
-            {
-                ButtonDeleteTenant.Enabled = false;
-            }
-            else
-            {
-                ButtonDeleteTenant.Enabled = true;
-            }
+            EnableDisableEditButton();
+            EnableDisableDeleteButton();
         }
 
         private void AllTenantsForm_Activated(object sender, EventArgs e)
         {
             PopulateTenants();
+
+            EnableDisableEditButton();
+            EnableDisableDeleteButton();
         }
 
         private void ButtonAddNewTenant_Click(object sender, EventArgs e)
@@ -78,9 +71,6 @@ namespace ShadanandaGuthi
                     messageForm = new MessageForm();
                     messageForm.MessageText = "छनौट गरिएको मोहीको विवरण सफलतापूर्वक मेटाइयो।";
                     messageForm.ShowDialog();
-
-                    // Refresh the datagridview
-                    PopulateTenants();
                 }
             }
         }
@@ -104,6 +94,38 @@ namespace ShadanandaGuthi
 
         #region Private Helper Functions
         
+        private void EnableDisableDeleteButton()
+        {
+            // If DataGridViewLease has no rows, we can assume 
+            // the selected tenant has no lease. So we can
+            // safely delete this tenant; enable the Delete button
+
+            if (DataGridViewLeases.Rows.Count > 0 || DataGridViewTenants.Rows.Count == 0)
+            {
+                ButtonDeleteTenant.Enabled = false;
+            }
+            else
+            {
+                ButtonDeleteTenant.Enabled = true;
+            }
+        }
+
+        private void EnableDisableEditButton()
+        {
+            // If DataGridViewTenants has no rows, we can assume 
+            // there's no tenant info to edit, in that case disale
+            // the Edit button. Otherwise, enable it.
+
+            if (DataGridViewTenants.Rows.Count > 0)
+            {
+                ButtonEditTenant.Enabled = true;
+            }
+            else
+            {
+                ButtonEditTenant.Enabled = false;
+            }
+        }
+
         private void PopulateTenants()
         {
             TenantDA tenantDA = new TenantDA();
@@ -159,8 +181,10 @@ namespace ShadanandaGuthi
 
                 DataGridViewLeases.Rows.Add(row);
             }
+
         }
 
         #endregion
+
     }
 }
