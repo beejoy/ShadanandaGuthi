@@ -10,9 +10,9 @@ namespace ShadanandaGuthiLibrary
     {
         public static string GetNepaliNumber(int number)
         {
-            List<string> nepaliNumbers = new List<string>() { "०", "१", "२", "३", "४", "५", "६", "७", "८", "९", "१०", "११", "१२", "१३", "१४", "१५", "१६", "१७", "१८", "१९", "२०", "२१", "२२", "२३", "२४", "२५", "२६", "२७", "२८", "२९", "३०" };
+            List<string> nepaliNumbers = new List<string>() { "०", "१", "२", "३", "४", "५", "६", "७", "८", "९", "१०", "११", "१२", "१३", "१४", "१५", "१६", "१७", "१८", "१९", "२०", "२१", "२२", "२३", "२४", "२५", "२६", "२७", "२८", "२९", "३०", "३१", "३२", "३३", "३४", "३५", "३६", "३७", "३८", "३९", "४०" };
 
-            if (number >= 0 && number <= 30)
+            if (number >= 0 && number <= nepaliNumbers.Count)
                 return nepaliNumbers[number];
             else
                 return nepaliNumbers[0];

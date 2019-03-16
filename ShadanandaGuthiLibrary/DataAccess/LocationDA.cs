@@ -117,6 +117,28 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return result;
         }
 
+        public bool DoesLocationHaveLands(Location location)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                string sql = "SELECT land_id FROM Land WHERE location_id = @LocationID";
+                SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
+                sqlCommand.Parameters.AddWithValue("@LocationID", location.LocationID);
+
+                sqlConn.Open();
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
         public bool SaveLocation(Location newLocation)
         {
             bool result = false;
@@ -145,6 +167,71 @@ namespace ShadanandaGuthiLibrary.DataAccess
             finally
             {
                 sqlConn.Close();
+            }
+
+            return result;
+        }
+
+        public bool UpdateLocation(Location location)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.CommandText = "UPDATE Location SET location = @Location, local_level = @LocalLevel WHERE location_id = @LocationID";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlCommand.Parameters.AddWithValue("@LocationID", location.LocationID);
+                    sqlCommand.Parameters.AddWithValue("@Location", location.LocationPreviousVDC);
+                    sqlCommand.Parameters.AddWithValue("@LocalLevel", location.LocationNewLevel);
+
+                    sqlConn.Open();
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        result = true;
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error: UpdateLocation() method couldn't execute properly.");
+                }    
+            }
+
+            return result;
+        }
+
+        public bool DeleteLocation(Location location)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.CommandText = "DELETE FROM Location WHERE location_id = @LocationID";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlCommand.Parameters.AddWithValue("@LocationID", location.LocationID);
+
+                    sqlConn.Open();
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        result = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error: DeleteLocation() method couldn't execute properly.");
+                }
             }
 
             return result;
