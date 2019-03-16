@@ -73,6 +73,12 @@ namespace ShadanandaGuthi
             newTenantRegister.ShowDialog();
         }
 
+        private void ToolStripMenuItemTenantDeregister_Click(object sender, EventArgs e)
+        {
+            TenantDeregisterForm deregisterForm = new TenantDeregisterForm();
+            deregisterForm.ShowDialog();
+        }
+
         private void ToolStripMenuItemTenantList_Click(object sender, EventArgs e)
         {
             AllTenantsForm allTenantsForm = new AllTenantsForm();
@@ -126,7 +132,7 @@ namespace ShadanandaGuthi
             }
 
             // Update total number of lands in selected location (label text)
-            LabelTotalLandsInSelectedLocation.Text = Helper.GetNepaliNumber(lands.Count);
+            LabelTotalLandsInSelectedLocation.Text = $"जम्मा जग्गा (कित्ता) संख्या :  {Helper.GetNepaliNumber(lands.Count)}";
         }
 
         private void DataGridViewLands_SelectionChanged(object sender, EventArgs e)

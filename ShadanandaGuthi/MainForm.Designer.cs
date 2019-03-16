@@ -52,6 +52,7 @@
             this.ToolStripMenuItemTenant = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemNewTenant = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemTenantRegisterAndTransfer = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemTenantDeregister = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemTenantList = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemLease = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemLeaseRentPayment = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,6 @@
             this.ToolStripMenuItemMisc = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemCurrentYear = new System.Windows.Forms.ToolStripMenuItem();
             this.SplitContainerVertical = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SplitContainerHorizontal = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.LabelTotalLandsInSelectedLocation = new System.Windows.Forms.Label();
@@ -73,7 +73,6 @@
             this.ColumnFather = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.LabelTotalLands = new System.Windows.Forms.Label();
             this.ListBoxLocations = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DataGridViewLands = new System.Windows.Forms.DataGridView();
@@ -82,20 +81,20 @@
             this.ColumnPlotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLandArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ToolStripMenuItemTenantDeregister = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).BeginInit();
             this.SplitContainerVertical.Panel1.SuspendLayout();
             this.SplitContainerVertical.Panel2.SuspendLayout();
             this.SplitContainerVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerHorizontal)).BeginInit();
             this.SplitContainerHorizontal.Panel1.SuspendLayout();
             this.SplitContainerHorizontal.Panel2.SuspendLayout();
             this.SplitContainerHorizontal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,6 +219,13 @@
             this.ToolStripMenuItemTenantRegisterAndTransfer.Text = "मोही दर्ता तथा हस्तान्तरण";
             this.ToolStripMenuItemTenantRegisterAndTransfer.Click += new System.EventHandler(this.ToolStripMenuItemTenantRegisterAndTransfer_Click);
             // 
+            // ToolStripMenuItemTenantDeregister
+            // 
+            this.ToolStripMenuItemTenantDeregister.Name = "ToolStripMenuItemTenantDeregister";
+            this.ToolStripMenuItemTenantDeregister.Size = new System.Drawing.Size(191, 24);
+            this.ToolStripMenuItemTenantDeregister.Text = "मोही दर्ता खारेज";
+            this.ToolStripMenuItemTenantDeregister.Click += new System.EventHandler(this.ToolStripMenuItemTenantDeregister_Click);
+            // 
             // ToolStripMenuItemTenantList
             // 
             this.ToolStripMenuItemTenantList.Name = "ToolStripMenuItemTenantList";
@@ -239,7 +245,7 @@
             // ToolStripMenuItemLeaseRentPayment
             // 
             this.ToolStripMenuItemLeaseRentPayment.Name = "ToolStripMenuItemLeaseRentPayment";
-            this.ToolStripMenuItemLeaseRentPayment.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemLeaseRentPayment.Size = new System.Drawing.Size(173, 24);
             this.ToolStripMenuItemLeaseRentPayment.Text = "ठेक्का संकलन";
             this.ToolStripMenuItemLeaseRentPayment.Click += new System.EventHandler(this.ToolStripMenuItemLeaseRentPayment_Click);
             // 
@@ -249,20 +255,20 @@
             this.ToolStripMenuItemRentPaidByTenant,
             this.ToolStripMenuItemRentPaidByAllTenants});
             this.ToolStripMenuItemRentPaid.Name = "ToolStripMenuItemRentPaid";
-            this.ToolStripMenuItemRentPaid.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemRentPaid.Size = new System.Drawing.Size(173, 24);
             this.ToolStripMenuItemRentPaid.Text = "ठेक्का तिरेको विवरण";
             // 
             // ToolStripMenuItemRentPaidByTenant
             // 
             this.ToolStripMenuItemRentPaidByTenant.Name = "ToolStripMenuItemRentPaidByTenant";
-            this.ToolStripMenuItemRentPaidByTenant.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemRentPaidByTenant.Size = new System.Drawing.Size(165, 24);
             this.ToolStripMenuItemRentPaidByTenant.Text = "मोही अनुसार";
             this.ToolStripMenuItemRentPaidByTenant.Click += new System.EventHandler(this.ToolStripMenuItemRentPaidByTenant_Click);
             // 
             // ToolStripMenuItemRentPaidByAllTenants
             // 
             this.ToolStripMenuItemRentPaidByAllTenants.Name = "ToolStripMenuItemRentPaidByAllTenants";
-            this.ToolStripMenuItemRentPaidByAllTenants.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItemRentPaidByAllTenants.Size = new System.Drawing.Size(165, 24);
             this.ToolStripMenuItemRentPaidByAllTenants.Text = "सबैको एकमुष्ट सूची";
             // 
             // ToolStripMenuItemMisc
@@ -302,17 +308,6 @@
             this.SplitContainerVertical.TabIndex = 2;
             this.SplitContainerVertical.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(402, 648);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // SplitContainerHorizontal
             // 
             this.SplitContainerHorizontal.BackColor = System.Drawing.SystemColors.Control;
@@ -329,7 +324,6 @@
             this.SplitContainerHorizontal.Panel1.Controls.Add(this.LabelTotalLandsInSelectedLocation);
             this.SplitContainerHorizontal.Panel1.Controls.Add(this.DataGridViewTenants);
             this.SplitContainerHorizontal.Panel1.Controls.Add(this.label1);
-            this.SplitContainerHorizontal.Panel1.Controls.Add(this.LabelTotalLands);
             this.SplitContainerHorizontal.Panel1.Controls.Add(this.ListBoxLocations);
             this.SplitContainerHorizontal.Panel1.Controls.Add(this.label2);
             this.SplitContainerHorizontal.Panel1.Controls.Add(this.DataGridViewLands);
@@ -349,7 +343,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(280, 292);
+            this.label3.Location = new System.Drawing.Point(3, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 3;
@@ -357,17 +351,15 @@
             // 
             // LabelTotalLandsInSelectedLocation
             // 
-            this.LabelTotalLandsInSelectedLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelTotalLandsInSelectedLocation.AutoSize = true;
+            this.LabelTotalLandsInSelectedLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelTotalLandsInSelectedLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTotalLandsInSelectedLocation.Location = new System.Drawing.Point(908, 10);
+            this.LabelTotalLandsInSelectedLocation.Location = new System.Drawing.Point(669, 10);
             this.LabelTotalLandsInSelectedLocation.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.LabelTotalLandsInSelectedLocation.Name = "LabelTotalLandsInSelectedLocation";
-            this.LabelTotalLandsInSelectedLocation.Size = new System.Drawing.Size(16, 20);
+            this.LabelTotalLandsInSelectedLocation.Size = new System.Drawing.Size(257, 20);
             this.LabelTotalLandsInSelectedLocation.TabIndex = 4;
-            this.LabelTotalLandsInSelectedLocation.Text = "०";
-            this.LabelTotalLandsInSelectedLocation.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LabelTotalLandsInSelectedLocation.Text = "जम्मा जग्गा (कित्ता) संख्या";
+            this.LabelTotalLandsInSelectedLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DataGridViewTenants
             // 
@@ -395,11 +387,11 @@
             this.ColumnMobileNumber,
             this.ColumnFather,
             this.ColumnLast});
-            this.DataGridViewTenants.Location = new System.Drawing.Point(283, 315);
+            this.DataGridViewTenants.Location = new System.Drawing.Point(7, 315);
             this.DataGridViewTenants.Name = "DataGridViewTenants";
             this.DataGridViewTenants.ReadOnly = true;
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewTenants.Size = new System.Drawing.Size(643, 100);
+            this.DataGridViewTenants.Size = new System.Drawing.Size(919, 100);
             this.DataGridViewTenants.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn2
@@ -459,18 +451,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "जग्गा भएको स्थान";
             // 
-            // LabelTotalLands
-            // 
-            this.LabelTotalLands.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelTotalLands.AutoSize = true;
-            this.LabelTotalLands.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTotalLands.Location = new System.Drawing.Point(755, 10);
-            this.LabelTotalLands.Name = "LabelTotalLands";
-            this.LabelTotalLands.Size = new System.Drawing.Size(143, 20);
-            this.LabelTotalLands.TabIndex = 3;
-            this.LabelTotalLands.Text = "जम्मा कित्ता (जग्गा) संख्या :";
-            this.LabelTotalLands.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // ListBoxLocations
             // 
             this.ListBoxLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -481,7 +461,7 @@
             this.ListBoxLocations.ItemHeight = 20;
             this.ListBoxLocations.Location = new System.Drawing.Point(7, 33);
             this.ListBoxLocations.Name = "ListBoxLocations";
-            this.ListBoxLocations.Size = new System.Drawing.Size(255, 382);
+            this.ListBoxLocations.Size = new System.Drawing.Size(255, 222);
             this.ListBoxLocations.TabIndex = 0;
             this.ListBoxLocations.SelectedIndexChanged += new System.EventHandler(this.ListBoxLocations_SelectedIndexChanged);
             // 
@@ -523,7 +503,7 @@
             this.DataGridViewLands.Name = "DataGridViewLands";
             this.DataGridViewLands.ReadOnly = true;
             this.DataGridViewLands.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewLands.Size = new System.Drawing.Size(643, 235);
+            this.DataGridViewLands.Size = new System.Drawing.Size(643, 222);
             this.DataGridViewLands.TabIndex = 0;
             this.DataGridViewLands.SelectionChanged += new System.EventHandler(this.DataGridViewLands_SelectionChanged);
             // 
@@ -568,6 +548,17 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(402, 648);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -580,12 +571,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // ToolStripMenuItemTenantDeregister
-            // 
-            this.ToolStripMenuItemTenantDeregister.Name = "ToolStripMenuItemTenantDeregister";
-            this.ToolStripMenuItemTenantDeregister.Size = new System.Drawing.Size(191, 24);
-            this.ToolStripMenuItemTenantDeregister.Text = "मोही दर्ता खारेज";
             // 
             // MainForm
             // 
@@ -610,7 +595,6 @@
             this.SplitContainerVertical.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).EndInit();
             this.SplitContainerVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SplitContainerHorizontal.Panel1.ResumeLayout(false);
             this.SplitContainerHorizontal.Panel1.PerformLayout();
             this.SplitContainerHorizontal.Panel2.ResumeLayout(false);
@@ -618,6 +602,7 @@
             this.SplitContainerHorizontal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -648,7 +633,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label LabelTotalLands;
         private System.Windows.Forms.Label LabelTotalLandsInSelectedLocation;
         private System.Windows.Forms.ListBox ListBoxLocations;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemTenantRegisterAndTransfer;

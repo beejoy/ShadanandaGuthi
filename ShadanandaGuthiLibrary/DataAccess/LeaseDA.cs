@@ -136,6 +136,7 @@ namespace ShadanandaGuthiLibrary.DataAccess
 
         public bool IsDuplicateLease(Lease leaseToCheck)
         {
+            // TODO - IsDuplicateLease(Lease) to be implemented
             bool result = false;
 
             return result;

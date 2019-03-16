@@ -188,6 +188,29 @@ namespace ShadanandaGuthiLibrary.DataAccess
             return tenants;
         }
 
+        public bool DeregisterLease(int leaseID)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                string sql = "UPDATE Lease SET is_current = 0 WHERE lease_id = @LeaseID";
+                SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
+                sqlCommand.Parameters.AddWithValue("@LeaseID", leaseID);
+
+                sqlConn.Open();
+
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    result = true;
+                }
+            }
+            
+            return result;
+        }
+
         public bool DoesTenantHaveLease(int tenantID)
         {
             bool result = false;
