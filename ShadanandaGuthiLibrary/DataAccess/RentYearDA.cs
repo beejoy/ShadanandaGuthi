@@ -38,5 +38,85 @@ namespace ShadanandaGuthiLibrary.DataAccess
 
             return rentYears;
         }
+
+        public bool SaveRentYear(RentYear newRentYear)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "SaveRentYear";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlCommand.Parameters.AddWithValue("@RentYear", newRentYear.TheRentYear);
+
+                    sqlConn.Open();
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        result = true;
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error: SaveRentYear() method couldn't execute properly.");
+                }
+            }
+            return result;
+        }
+
+        public bool DeleteRentYear(RentYear rentYear)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = "DELETE FROM RentYear WHERE year_id = @YearID";
+                sqlCommand.Parameters.AddWithValue("@YearID", rentYear.YearID);
+
+                sqlCommand.Connection = sqlConn;
+
+
+                sqlConn.Open();
+
+                int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
+        public bool DoesRentYearHaveLeasePayment(RentYear rentYear)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                string sql = "SELECT year_id FROM LeasePayment WHERE year_id = @YearID";
+                SqlCommand sqlCommand = new SqlCommand(sql, sqlConn);
+                sqlCommand.Parameters.AddWithValue("@YearID", rentYear.YearID);
+
+                sqlConn.Open();
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
     }
 }
