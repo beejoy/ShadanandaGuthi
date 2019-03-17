@@ -62,6 +62,7 @@
             this.ToolStripMenuItemMisc = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemCurrentYear = new System.Windows.Forms.ToolStripMenuItem();
             this.SplitContainerVertical = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SplitContainerHorizontal = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.LabelTotalLandsInSelectedLocation = new System.Windows.Forms.Label();
@@ -81,20 +82,19 @@
             this.ColumnPlotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLandArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).BeginInit();
             this.SplitContainerVertical.Panel1.SuspendLayout();
             this.SplitContainerVertical.Panel2.SuspendLayout();
             this.SplitContainerVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerHorizontal)).BeginInit();
             this.SplitContainerHorizontal.Panel1.SuspendLayout();
             this.SplitContainerHorizontal.Panel2.SuspendLayout();
             this.SplitContainerHorizontal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,24 +128,24 @@
             // ToolStripMenuItemLoginLogout
             // 
             this.ToolStripMenuItemLoginLogout.Name = "ToolStripMenuItemLoginLogout";
-            this.ToolStripMenuItemLoginLogout.Size = new System.Drawing.Size(167, 24);
+            this.ToolStripMenuItemLoginLogout.Size = new System.Drawing.Size(180, 24);
             this.ToolStripMenuItemLoginLogout.Text = "लग-इन/लग-आउट";
             // 
             // ToolStripMenuItemChangePassword
             // 
             this.ToolStripMenuItemChangePassword.Name = "ToolStripMenuItemChangePassword";
-            this.ToolStripMenuItemChangePassword.Size = new System.Drawing.Size(167, 24);
+            this.ToolStripMenuItemChangePassword.Size = new System.Drawing.Size(180, 24);
             this.ToolStripMenuItemChangePassword.Text = "पासवर्ड परिवर्तन";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // ToolStripMenuItemExit
             // 
             this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
-            this.ToolStripMenuItemExit.Size = new System.Drawing.Size(167, 24);
+            this.ToolStripMenuItemExit.Size = new System.Drawing.Size(180, 24);
             this.ToolStripMenuItemExit.Text = "बन्द गर्नुहोस्";
             this.ToolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemExit_Click);
             // 
@@ -270,6 +270,7 @@
             this.ToolStripMenuItemRentPaidByAllTenants.Name = "ToolStripMenuItemRentPaidByAllTenants";
             this.ToolStripMenuItemRentPaidByAllTenants.Size = new System.Drawing.Size(165, 24);
             this.ToolStripMenuItemRentPaidByAllTenants.Text = "सबैको एकमुष्ट सूची";
+            this.ToolStripMenuItemRentPaidByAllTenants.Click += new System.EventHandler(this.ToolStripMenuItemRentPaidByAllTenants_Click);
             // 
             // ToolStripMenuItemMisc
             // 
@@ -307,6 +308,17 @@
             this.SplitContainerVertical.SplitterDistance = 427;
             this.SplitContainerVertical.TabIndex = 2;
             this.SplitContainerVertical.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(402, 648);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // SplitContainerHorizontal
             // 
@@ -390,6 +402,7 @@
             this.DataGridViewTenants.Location = new System.Drawing.Point(7, 315);
             this.DataGridViewTenants.Name = "DataGridViewTenants";
             this.DataGridViewTenants.ReadOnly = true;
+            this.DataGridViewTenants.RowHeadersVisible = false;
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewTenants.Size = new System.Drawing.Size(919, 100);
             this.DataGridViewTenants.TabIndex = 0;
@@ -502,6 +515,7 @@
             this.DataGridViewLands.Location = new System.Drawing.Point(283, 33);
             this.DataGridViewLands.Name = "DataGridViewLands";
             this.DataGridViewLands.ReadOnly = true;
+            this.DataGridViewLands.RowHeadersVisible = false;
             this.DataGridViewLands.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewLands.Size = new System.Drawing.Size(643, 222);
             this.DataGridViewLands.TabIndex = 0;
@@ -548,17 +562,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::ShadanandaGuthi.Properties.Resources.shadananda_guru_705x965px;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(402, 648);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -595,6 +598,7 @@
             this.SplitContainerVertical.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerVertical)).EndInit();
             this.SplitContainerVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SplitContainerHorizontal.Panel1.ResumeLayout(false);
             this.SplitContainerHorizontal.Panel1.PerformLayout();
             this.SplitContainerHorizontal.Panel2.ResumeLayout(false);
@@ -602,7 +606,6 @@
             this.SplitContainerHorizontal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewTenants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewLands)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

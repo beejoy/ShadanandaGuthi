@@ -135,6 +135,7 @@
             this.DataGridViewLeases.Location = new System.Drawing.Point(28, 343);
             this.DataGridViewLeases.Name = "DataGridViewLeases";
             this.DataGridViewLeases.ReadOnly = true;
+            this.DataGridViewLeases.RowHeadersVisible = false;
             this.DataGridViewLeases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewLeases.Size = new System.Drawing.Size(878, 191);
             this.DataGridViewLeases.TabIndex = 3;
@@ -165,6 +166,7 @@
             this.DataGridViewTenants.Location = new System.Drawing.Point(28, 46);
             this.DataGridViewTenants.Name = "DataGridViewTenants";
             this.DataGridViewTenants.ReadOnly = true;
+            this.DataGridViewTenants.RowHeadersVisible = false;
             this.DataGridViewTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewTenants.Size = new System.Drawing.Size(675, 254);
             this.DataGridViewTenants.TabIndex = 1;
@@ -317,6 +319,7 @@
             // 
             this.ColumnRemarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnRemarks.HeaderText = "कैफियत";
+            this.ColumnRemarks.MinimumWidth = 200;
             this.ColumnRemarks.Name = "ColumnRemarks";
             this.ColumnRemarks.ReadOnly = true;
             // 

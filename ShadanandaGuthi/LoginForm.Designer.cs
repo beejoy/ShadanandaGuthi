@@ -34,8 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TextBoxUsername = new System.Windows.Forms.TextBox();
+            this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.ButtonLogin = new System.Windows.Forms.Button();
             this.ButtonQuit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -112,22 +112,24 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "गोप्य शब्द :";
             // 
-            // textBox1
+            // TextBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 244);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(335, 31);
-            this.textBox1.TabIndex = 3;
+            this.TextBoxUsername.Location = new System.Drawing.Point(46, 244);
+            this.TextBoxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxUsername.Name = "TextBoxUsername";
+            this.TextBoxUsername.Size = new System.Drawing.Size(335, 31);
+            this.TextBoxUsername.TabIndex = 3;
+            this.TextBoxUsername.TextChanged += new System.EventHandler(this.TextBoxUsername_TextChanged);
             // 
-            // textBox2
+            // TextBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 308);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(335, 31);
-            this.textBox2.TabIndex = 4;
+            this.TextBoxPassword.Location = new System.Drawing.Point(46, 308);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxPassword.Name = "TextBoxPassword";
+            this.TextBoxPassword.PasswordChar = '*';
+            this.TextBoxPassword.Size = new System.Drawing.Size(335, 31);
+            this.TextBoxPassword.TabIndex = 4;
+            this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // ButtonLogin
             // 
@@ -135,7 +137,7 @@
             this.ButtonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonLogin.ForeColor = System.Drawing.Color.White;
             this.ButtonLogin.Location = new System.Drawing.Point(46, 369);
-            this.ButtonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonLogin.Name = "ButtonLogin";
             this.ButtonLogin.Size = new System.Drawing.Size(158, 52);
             this.ButtonLogin.TabIndex = 5;
@@ -149,7 +151,7 @@
             this.ButtonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonQuit.ForeColor = System.Drawing.Color.White;
             this.ButtonQuit.Location = new System.Drawing.Point(223, 369);
-            this.ButtonQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonQuit.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonQuit.Name = "ButtonQuit";
             this.ButtonQuit.Size = new System.Drawing.Size(158, 52);
             this.ButtonQuit.TabIndex = 6;
@@ -166,8 +168,8 @@
             this.ControlBox = false;
             this.Controls.Add(this.ButtonQuit);
             this.Controls.Add(this.ButtonLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextBoxPassword);
+            this.Controls.Add(this.TextBoxUsername);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -177,6 +179,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "लगिन फाराम";
             this.panel1.ResumeLayout(false);
@@ -194,8 +197,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TextBoxUsername;
+        private System.Windows.Forms.TextBox TextBoxPassword;
         private System.Windows.Forms.Button ButtonLogin;
         private System.Windows.Forms.Button ButtonQuit;
     }

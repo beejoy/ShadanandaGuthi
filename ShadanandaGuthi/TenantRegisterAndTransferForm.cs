@@ -106,9 +106,27 @@ namespace ShadanandaGuthi
                 // Transfer tenant ownership
                 if (RadioButtonActionTransferRegistration.Checked)
                 {
+                    // Check whether this is the case of self-transfer to one of the existing tenants
+                    bool caseOfSelfTransfer = false;
+                    foreach (var item in ComboBoxCurrentTenant.Items)
+                    {
+                        if (((Tenant)item).Fullname==newTenant.Fullname)
+                        {
+                            caseOfSelfTransfer = true;
+                            break;
+                        }
+                    }
+
                     Tenant currentTenant = (Tenant)ComboBoxCurrentTenant.SelectedItem;
 
-                    result = leaseDA.TransferLease(currentTenant, newLease);
+                    if (caseOfSelfTransfer)
+                    {
+                        result = leaseDA.SelfTransfer(currentTenant, newLease);
+                    }
+                    else
+                    {
+                        result = leaseDA.TransferLease(currentTenant, newLease);
+                    }
 
                     if (result)
                     {

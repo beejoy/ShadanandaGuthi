@@ -55,6 +55,12 @@
     <Compile Include="AllLandsForm.Designer.cs">
       <DependentUpon>AllLandsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllLeasePaymentDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllLeasePaymentDetailForm.Designer.cs">
+      <DependentUpon>AllLeasePaymentDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllTenantsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="AllLandsForm.resx">
       <DependentUpon>AllLandsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllLeasePaymentDetailForm.resx">
+      <DependentUpon>AllLeasePaymentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllTenantsForm.resx">
       <DependentUpon>AllTenantsForm.cs</DependentUpon>

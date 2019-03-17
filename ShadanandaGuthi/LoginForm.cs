@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShadanandaGuthiLibrary.DataAccess;
+using ShadanandaGuthiLibrary.Model;
 
 namespace ShadanandaGuthi
 {
     public partial class LoginForm : Form
     {
+        LoginUser loginUser;
+
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        public LoginForm(LoginUser user)
+        {
+            InitializeComponent();
+            loginUser = user;
         }
 
         private void ButtonQuit_Click(object sender, EventArgs e)
@@ -24,9 +27,29 @@ namespace ShadanandaGuthi
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Hide();
+            //if(loginUser.Username=="" || loginUser.Password=="")
+            //{
+            //    MessageBox.Show("Login failed!!!");
+            //}
+            //else
+            //{
+            //    LoginUserDA loginDA = new LoginUserDA();
+
+            //    if (loginDA.VerifyLogin(loginUser))
+            //    {
+            //        this.Close();
+            //    }
+            //}
+        }
+
+        private void TextBoxUsername_TextChanged(object sender, EventArgs e)
+        {
+            loginUser.Username = TextBoxUsername.Text;
+        }
+
+        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            loginUser.Password = TextBoxPassword.Text;
         }
     }
 }

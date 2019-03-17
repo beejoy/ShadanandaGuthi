@@ -212,5 +212,37 @@ namespace ShadanandaGuthiLibrary.DataAccess
 
             return result;
         }
+
+        public bool SelfTransfer(Tenant currentTenant, Lease transferLease)
+        {
+            bool result = false;
+
+            using (SqlConnection sqlConn = new SqlConnection(GlobalConfig.ConnString()))
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.CommandText = "UPDATE Lease SET is_current = 0 WHERE land_id = @LandID AND tenant_id = @CurrentTenantID";
+                    sqlCommand.Connection = sqlConn;
+
+                    sqlCommand.Parameters.AddWithValue("@LandID", transferLease.LeaseLand.LandID);
+                    sqlCommand.Parameters.AddWithValue("@CurrentTenantID", currentTenant.TenantID);
+
+                    sqlConn.Open();
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        result = true;
+
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Error: SelfTransfer() method couldn't execute properly.");
+                }
+            }
+
+            return result;
+        }
     }
 }

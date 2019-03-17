@@ -18,7 +18,7 @@ namespace ShadanandaGuthi
         {
             PopulateLocationListBox();
         }
-
+        
         #region ToolStripMenu Commands
 
         private void ToolStripMenuItemQuit_Click(object sender, EventArgs e)
@@ -101,6 +101,12 @@ namespace ShadanandaGuthi
         {
             TenantwiseLeasePaymentDetailForm paymentDetailForm = new TenantwiseLeasePaymentDetailForm();
             paymentDetailForm.ShowDialog();
+        }
+
+        private void ToolStripMenuItemRentPaidByAllTenants_Click(object sender, EventArgs e)
+        {
+            AllLeasePaymentDetailForm allPaymentDetailsForm = new AllLeasePaymentDetailForm();
+            allPaymentDetailsForm.ShowDialog();
         }
 
         #endregion

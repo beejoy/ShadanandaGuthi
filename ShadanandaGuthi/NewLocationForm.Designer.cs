@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TextBoxLocation = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             // 
             this.TextBoxLocation.Location = new System.Drawing.Point(120, 22);
             this.TextBoxLocation.Name = "TextBoxLocation";
-            this.TextBoxLocation.Size = new System.Drawing.Size(240, 26);
+            this.TextBoxLocation.Size = new System.Drawing.Size(236, 26);
             this.TextBoxLocation.TabIndex = 1;
             this.TextBoxLocation.TextChanged += new System.EventHandler(this.TextBoxLocation_TextChanged);
             // 
@@ -85,7 +85,7 @@
             // 
             this.TextBoxLocalLevel.Location = new System.Drawing.Point(120, 81);
             this.TextBoxLocalLevel.Name = "TextBoxLocalLevel";
-            this.TextBoxLocalLevel.Size = new System.Drawing.Size(240, 26);
+            this.TextBoxLocalLevel.Size = new System.Drawing.Size(236, 26);
             this.TextBoxLocalLevel.TabIndex = 4;
             this.TextBoxLocalLevel.TextChanged += new System.EventHandler(this.TextBoxLocalLevel_TextChanged);
             // 
@@ -101,9 +101,9 @@
             // ButtonSave
             // 
             this.ButtonSave.Enabled = false;
-            this.ButtonSave.Location = new System.Drawing.Point(19, 164);
+            this.ButtonSave.Location = new System.Drawing.Point(120, 157);
             this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(123, 41);
+            this.ButtonSave.Size = new System.Drawing.Size(115, 41);
             this.ButtonSave.TabIndex = 6;
             this.ButtonSave.Text = "सुरक्षित गर्नुहोस्";
             this.ButtonSave.UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@
             // 
             // ButtonQuit
             // 
-            this.ButtonQuit.Location = new System.Drawing.Point(257, 164);
+            this.ButtonQuit.Location = new System.Drawing.Point(241, 210);
             this.ButtonQuit.Name = "ButtonQuit";
-            this.ButtonQuit.Size = new System.Drawing.Size(103, 41);
+            this.ButtonQuit.Size = new System.Drawing.Size(115, 41);
             this.ButtonQuit.TabIndex = 8;
             this.ButtonQuit.Text = "रद्द गर्नुहोस्";
             this.ButtonQuit.UseVisualStyleBackColor = true;
@@ -124,24 +124,25 @@
             this.DataGridViewLocations.AllowUserToAddRows = false;
             this.DataGridViewLocations.AllowUserToDeleteRows = false;
             this.DataGridViewLocations.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewLocations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewLocations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewLocations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.DataGridViewLocations.Location = new System.Drawing.Point(388, 22);
+            this.DataGridViewLocations.Location = new System.Drawing.Point(380, 22);
             this.DataGridViewLocations.Name = "DataGridViewLocations";
             this.DataGridViewLocations.ReadOnly = true;
+            this.DataGridViewLocations.RowHeadersVisible = false;
             this.DataGridViewLocations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewLocations.Size = new System.Drawing.Size(369, 183);
+            this.DataGridViewLocations.Size = new System.Drawing.Size(377, 229);
             this.DataGridViewLocations.TabIndex = 9;
             this.DataGridViewLocations.TabStop = false;
             this.DataGridViewLocations.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewLocations_RowHeaderMouseDoubleClick);
@@ -149,8 +150,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "क्र.सं.";
             this.Column1.MinimumWidth = 70;
             this.Column1.Name = "Column1";
@@ -176,9 +177,9 @@
             // ButtonDelete
             // 
             this.ButtonDelete.Enabled = false;
-            this.ButtonDelete.Location = new System.Drawing.Point(148, 164);
+            this.ButtonDelete.Location = new System.Drawing.Point(241, 157);
             this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(103, 41);
+            this.ButtonDelete.Size = new System.Drawing.Size(115, 41);
             this.ButtonDelete.TabIndex = 7;
             this.ButtonDelete.Text = "मेटाउनुहोस्";
             this.ButtonDelete.UseVisualStyleBackColor = true;
@@ -188,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 224);
+            this.ClientSize = new System.Drawing.Size(776, 270);
             this.ControlBox = false;
             this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.DataGridViewLocations);

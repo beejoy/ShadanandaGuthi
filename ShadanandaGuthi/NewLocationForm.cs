@@ -55,28 +55,20 @@ namespace ShadanandaGuthi
 
             if (newLocation.LocationID > 0)
             {
-                if (!locationDA.IsDuplicateLocation(newLocation))
+                // Update the location information
+                try
                 {
-                    // Update the location information
-                    try
-                    {
-                        result = locationDA.UpdateLocation(newLocation);
-                    }
-                    catch (Exception)
-                    {
-                        messageForm.MessageText = "केही आन्तरिक त्रुटीको कारण स्थानको विवरण अद्यावधिक गर्न सकिएन।";
-                        messageForm.ShowDialog();
-                    }
-
-                    if (result)
-                    {
-                        messageForm.MessageText = "उक्त स्थानको विवरण सफलतापूर्वक अद्यावधिक गरियो।";
-                        messageForm.ShowDialog();
-                    }
+                    result = locationDA.UpdateLocation(newLocation);
                 }
-                else
+                catch (Exception)
                 {
-                    messageForm.MessageText = "उक्त स्थानको विवरण पहिले नै सुरक्षित गरिसकेको छ।";
+                    messageForm.MessageText = "केही आन्तरिक त्रुटीको कारण स्थानको विवरण अद्यावधिक गर्न सकिएन।";
+                    messageForm.ShowDialog();
+                }
+
+                if (result)
+                {
+                    messageForm.MessageText = "उक्त स्थानको विवरण सफलतापूर्वक अद्यावधिक गरियो।";
                     messageForm.ShowDialog();
                 }
             }
