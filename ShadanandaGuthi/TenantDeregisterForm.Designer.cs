@@ -72,6 +72,7 @@
             // 
             // ComboBoxTenant
             // 
+            this.ComboBoxTenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxTenant.FormattingEnabled = true;
             this.ComboBoxTenant.Location = new System.Drawing.Point(125, 26);
             this.ComboBoxTenant.Name = "ComboBoxTenant";

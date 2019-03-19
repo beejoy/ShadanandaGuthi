@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 26);
+            this.label1.Location = new System.Drawing.Point(18, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 0;
@@ -65,14 +65,15 @@
             // 
             this.ComboBoxRentYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxRentYear.FormattingEnabled = true;
-            this.ComboBoxRentYear.Location = new System.Drawing.Point(107, 23);
+            this.ComboBoxRentYear.Location = new System.Drawing.Point(102, 23);
             this.ComboBoxRentYear.Name = "ComboBoxRentYear";
             this.ComboBoxRentYear.Size = new System.Drawing.Size(121, 28);
             this.ComboBoxRentYear.TabIndex = 1;
+            this.ComboBoxRentYear.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRentYear_SelectedIndexChanged);
             // 
             // ButtonClose
             // 
-            this.ButtonClose.Location = new System.Drawing.Point(820, 487);
+            this.ButtonClose.Location = new System.Drawing.Point(824, 485);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(123, 41);
             this.ButtonClose.TabIndex = 8;
@@ -106,13 +107,13 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.DataGridViewPaymentDetails.Location = new System.Drawing.Point(27, 67);
+            this.DataGridViewPaymentDetails.Location = new System.Drawing.Point(22, 67);
             this.DataGridViewPaymentDetails.MultiSelect = false;
             this.DataGridViewPaymentDetails.Name = "DataGridViewPaymentDetails";
             this.DataGridViewPaymentDetails.ReadOnly = true;
             this.DataGridViewPaymentDetails.RowHeadersVisible = false;
             this.DataGridViewPaymentDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewPaymentDetails.Size = new System.Drawing.Size(916, 400);
+            this.DataGridViewPaymentDetails.Size = new System.Drawing.Size(925, 402);
             this.DataGridViewPaymentDetails.TabIndex = 9;
             this.DataGridViewPaymentDetails.TabStop = false;
             // 

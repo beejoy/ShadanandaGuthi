@@ -140,7 +140,6 @@
             this.DataGridViewLocations.Location = new System.Drawing.Point(380, 22);
             this.DataGridViewLocations.Name = "DataGridViewLocations";
             this.DataGridViewLocations.ReadOnly = true;
-            this.DataGridViewLocations.RowHeadersVisible = false;
             this.DataGridViewLocations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewLocations.Size = new System.Drawing.Size(377, 229);
             this.DataGridViewLocations.TabIndex = 9;

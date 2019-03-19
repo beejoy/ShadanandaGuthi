@@ -8,7 +8,6 @@ namespace ShadanandaGuthiLibrary.DataAccess
 {
     public class LeaseDA
     {
-        // TODO - To be implemented GetCurrentTenantsByLandID
         public List<Tenant> GetCurrentTenantsByLandID(int landID)
         {
             List<Tenant> tenants = new List<Tenant>();

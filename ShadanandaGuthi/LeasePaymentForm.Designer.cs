@@ -95,6 +95,7 @@
             // 
             this.ComboBoxTenant.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ComboBoxTenant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComboBoxTenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxTenant.FormattingEnabled = true;
             this.ComboBoxTenant.Location = new System.Drawing.Point(141, 28);
             this.ComboBoxTenant.Name = "ComboBoxTenant";
